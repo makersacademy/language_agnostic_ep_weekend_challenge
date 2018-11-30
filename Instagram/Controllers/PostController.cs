@@ -19,8 +19,9 @@ namespace Instagram.Controllers
         }
 
         // GET: /<controller>/
-        public IActionResult Index()
+        public ActionResult<List<Post>> Index()
         {
+            ViewBag.Posts = _context.posts.ToList();
             return View();
         }
     }

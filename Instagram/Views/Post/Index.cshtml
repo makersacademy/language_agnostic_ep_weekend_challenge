@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Posts";
+}
+
+<ol>
+    @foreach (var post in ViewBag.Posts)
+    {
+        @post.content
+    }
+</ol>

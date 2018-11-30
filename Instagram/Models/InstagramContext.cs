@@ -6,6 +6,7 @@ namespace Instagram.Models
         public InstagramContext(DbContextOptions<InstagramContext> options) : base(options)
         {
         }
-        //public DbSet<Post> posts { get; set; }
+
+        public DbSet<Post> posts { get; set; }
     }
 }

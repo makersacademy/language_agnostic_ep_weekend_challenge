@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Acebook.Models
+namespace Instagram.Models
 {
     public class Post
     {

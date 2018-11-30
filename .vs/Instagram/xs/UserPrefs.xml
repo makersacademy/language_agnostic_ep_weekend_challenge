@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{BD4A3699-77AB-45F3-AECD-997F6399D842}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Instagram/Models/Post.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Instagram/Views/Post/Index.cshtml">
     <Files>
-      <File FileName="Instagram/Controllers/PostController.cs" Line="28" Column="1" />
-      <File FileName="Instagram/Models/Post.cs" Line="6" Column="6" />
+      <File FileName="Instagram/Controllers/PostController.cs" Line="26" Column="10" />
+      <File FileName="Instagram/Views/Post/Index.cshtml" Line="2" Column="14" />
       <File FileName="../acebook-brogrammers/Acebook/Acebook/Controllers/PostController.cs" Line="100" Column="43" NotebookId="1" />
-      <File FileName="../acebook-brogrammers/Acebook/Acebook/Models/Post.cs" Line="12" Column="1" NotebookId="1" />
+      <File FileName="../acebook-brogrammers/Acebook/Acebook/Views/Post/Index.cshtml" Line="14" Column="6" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
