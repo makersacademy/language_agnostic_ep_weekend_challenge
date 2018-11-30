@@ -1,0 +1,11 @@
+
+/db/*
+/env/*
+__pycache__
+*.pyc
+migrations/
+.vscode/settings.json
+Pipfile.lock
+.*.DS_Store
+Pipfile
+db.sqlite3
