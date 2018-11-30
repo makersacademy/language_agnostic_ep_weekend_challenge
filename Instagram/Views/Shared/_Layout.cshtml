@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - Instagram</title>
+        <title>Instagram</title>
         <link type="image/x-icon" rel="icon" href="https://makers.tech/wp-content/themes/wp-makers-2018/favicon.ico">
 
         <environment include="Development">
@@ -18,7 +18,7 @@
         </environment>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top mb-2">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,9 +31,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>*@
+                        <li><a asp-area="" asp-controller="Post" asp-action="New">New Post</a></li>
                     </ul>
                 </div>
             </div>
