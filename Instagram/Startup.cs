@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Instagram.Models;
 
 namespace Instagram
 {
@@ -31,6 +33,9 @@ namespace Instagram
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            //Database connection setup
+            services.AddDbContext<InstagramContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

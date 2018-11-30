@@ -1,5 +1,20 @@
 ﻿<Properties StartupConfiguration="{BD4A3699-77AB-45F3-AECD-997F6399D842}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Instagram/Models/Post.cs">
+    <Files>
+      <File FileName="Instagram/Controllers/PostController.cs" Line="28" Column="1" />
+      <File FileName="Instagram/Models/Post.cs" Line="6" Column="6" />
+      <File FileName="../acebook-brogrammers/Acebook/Acebook/Controllers/PostController.cs" Line="100" Column="43" NotebookId="1" />
+      <File FileName="../acebook-brogrammers/Acebook/Acebook/Models/Post.cs" Line="12" Column="1" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Acebook" expanded="True" />
+          <Node name="Instagram" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Instagram PreferredExecutionTarget="MonoDevelop.Default" />
