@@ -1,14 +1,16 @@
 from django.db import models
+from django.forms import ModelForm
+
 from django.contrib.auth.models import User
 import datetime
 
 class Player(models.Model):
-    player_name = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    user_id = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     best_score = models.IntegerField(default=0)
     games_tot = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.player_name
+        return str(self.user_id)
 
     def getPlayerCat(self):
         if self.games_tot > 10:
@@ -19,19 +21,24 @@ class Player(models.Model):
             return "Beginner"
 
 class Game(models.Model):
-    player_id = models.ForeignKey(Player, on_delete=models.SET_NULL, null=True, blank=True)
-    date = models.DateTimeField(datetime.datetime.now)
+    user_id = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
     game_total_score = models.IntegerField(default=0)
     frames_tot = models.IntegerField(default=0)
 
     def __str__(self):
-        return "%s is playing on %d" % (self.player_id, self.date)
+        return "%s is playing on %s" % (self.user_id, str(self.date))
 
     def getCompletion(self):
-        if frames_tot = 10:
+        if frames_tot == 10:
             return "true"
         else:
             return "false"
+# Create the form class.
+class GameForm(ModelForm):
+    class Meta:
+        model = Game
+        fields = ['user_id', 'game_total_score', 'frames_tot']
 
 class Frame(models.Model):
     game_id = models.ForeignKey(Game, on_delete=models.CASCADE)
@@ -54,11 +61,11 @@ class Frame(models.Model):
     frame_total_score = models.IntegerField(default=0)
 
     def getFrameCategory(self):
-        if roll1_score = 10:
+        if roll1_score == 10:
             return "Strike"
-        elif roll1_score + roll2_score = 10:
+        elif roll1_score + roll2_score == 10:
             return "Spare"
-        elif roll1_score + roll2_score = 0:
+        elif roll1_score + roll2_score == 0:
             return "Gutter"
         else:
             return "Regular"
@@ -67,4 +74,4 @@ class Frame(models.Model):
         return roll1_score + roll2_score + bonus1_score + bonus2_score
 
     def __str__(self):
-        return "Frame: "+self.sequence_no
+        return "Frame: "+str(self.sequence_no)

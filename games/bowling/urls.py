@@ -1,4 +1,4 @@
-"""games URL Configuration
+"""letsgobowling URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -15,11 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.models import User
 from django.conf.urls import include
+
+from . import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('bowling.urls')),
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('accounts/', include('django.contrib.auth.urls')),
+
+    path('game/new', views.startGame, name ='game_new'),
+    path('game/<int:game_id>/<int:frame_id>/<int:score>/play', views.playGame, name ='game_play'),
+    path('game/<int:game_id>/end', views.endGame, name ='game_end'),
+
+    path('player/record', views.showPlayerStats, name ='player_record'),
+    path('app/record', views.showAppStats, name ='app_record'),
 
 ]

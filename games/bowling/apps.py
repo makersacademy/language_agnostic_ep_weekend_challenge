@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class BowlingConfig(AppConfig):
+class Bowling(AppConfig):
     name = 'bowling'
