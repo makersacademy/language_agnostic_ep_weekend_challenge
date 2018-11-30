@@ -2,9 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Instagram/Views/Post/Index.cshtml">
     <Files>
       <File FileName="Instagram/Controllers/PostController.cs" Line="26" Column="10" />
-      <File FileName="Instagram/Views/Post/Index.cshtml" Line="2" Column="14" />
-      <File FileName="../acebook-brogrammers/Acebook/Acebook/Controllers/PostController.cs" Line="100" Column="43" NotebookId="1" />
-      <File FileName="../acebook-brogrammers/Acebook/Acebook/Views/Post/Index.cshtml" Line="14" Column="6" NotebookId="1" />
+      <File FileName="Instagram/Views/Shared/_Layout.cshtml" Line="44" Column="43" />
+      <File FileName="Instagram/Views/Post/Index.cshtml" Line="4" Column="13" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">

@@ -1,10 +1,11 @@
 ﻿@{
-    ViewData["Title"] = "Posts";
 }
 
-<ol>
-    @foreach (var post in ViewBag.Posts)
-    {
-        @post.content
-    }
-</ol>
+<div class="p-6">
+    <ul>
+        @foreach (var post in ViewBag.Posts)
+        {
+            <li>@post.content</li>
+        }
+    </ul>
+</div>
