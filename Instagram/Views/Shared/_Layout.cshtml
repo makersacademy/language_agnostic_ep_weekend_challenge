@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>@ViewData["Title"] - Instagram</title>
+        <link type="image/x-icon" rel="icon" href="https://makers.tech/wp-content/themes/wp-makers-2018/favicon.ico">
 
         <environment include="Development">
             <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,13 +27,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Instagram</a>
+                    <a asp-area="" asp-controller="Post" asp-action="Index" class="navbar-brand">Instagram</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>*@
                     </ul>
                 </div>
             </div>
@@ -44,7 +45,7 @@
             @RenderBody()
             <hr />
             <footer>
-                <p>&copy; 2018 - Instagram</p>
+                <p>&copy; 2018 - <a href="https://github.com/aimeecraig">Aimee Craig</a></p>
             </footer>
         </div>
 
