@@ -42,5 +42,13 @@ namespace Instagram.Controllers
             _context.SaveChanges();
             Response.Redirect("https://localhost:5001/");
         }
+
+        [HttpPost]
+        public void Destroy(int id)
+        {
+            _context.posts.Remove(_context.posts.Find(id));
+            _context.SaveChanges();
+            Response.Redirect("https://localhost:5001/");
+        }
     }
 }

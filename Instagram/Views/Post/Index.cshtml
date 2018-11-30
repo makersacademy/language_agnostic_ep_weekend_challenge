@@ -1,9 +1,10 @@
 ﻿@{
 }
 
-<ul>
-    @foreach (var post in ViewBag.Posts)
-    {
-        <li>@post.content</li>
-    }
-</ul>
+@foreach (var post in ViewBag.Posts)
+{
+    <li>@post.content</li>
+    <form action="~/Post/Destroy/@post.id" method="post">
+        <input type="submit" value="Delete" />
+    </form>
+}
