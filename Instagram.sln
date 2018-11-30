@@ -1,7 +1,9 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instagram", "Instagram\Instagram.csproj", "{573680A4-7F6D-4E05-81B0-B20521126BF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instagram.Tests", "Instagram.Tests\Instagram.Tests.csproj", "{40D1E722-EF09-44E6-8DDC-AEF91FED87F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +15,9 @@ Global
 		{573680A4-7F6D-4E05-81B0-B20521126BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{573680A4-7F6D-4E05-81B0-B20521126BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{573680A4-7F6D-4E05-81B0-B20521126BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40D1E722-EF09-44E6-8DDC-AEF91FED87F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D1E722-EF09-44E6-8DDC-AEF91FED87F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D1E722-EF09-44E6-8DDC-AEF91FED87F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D1E722-EF09-44E6-8DDC-AEF91FED87F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
