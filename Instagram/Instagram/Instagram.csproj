@@ -7,10 +7,20 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Views\Home\About.cshtml" />
     <Content Remove="Views\Home\Contact.cshtml" />
+    <Content Remove="wwwroot\images\daschund.jpg" />
+    <Content Remove="wwwroot\images\golden-retriever.jpg" />
+    <Content Remove="wwwroot\images\dachshund.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\golden-retriever.jpg" />
+    <None Include="wwwroot\images\dachshund.jpg" />
   </ItemGroup>
 </Project>

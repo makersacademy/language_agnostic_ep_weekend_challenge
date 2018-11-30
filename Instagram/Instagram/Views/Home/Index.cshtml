@@ -3,3 +3,14 @@
 }
 
 <h1>Instagram</h1>
+
+<ul>
+        @foreach (var post in ViewBag.Posts)
+        {
+            <img src="images/@post.image" style="width: auto;height:400px;" />
+            <br>
+            <br>
+        }
+</ul>
+
+@*~/Projects/Makers/Week_8/language_agnostic_ep_weekend_challenge/*@
