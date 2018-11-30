@@ -28,5 +28,19 @@ namespace Instagram.Controllers
             ViewBag.Posts = _context.posts.ToList();
             return View();
         }
+
+        [HttpGet]
+        public ActionResult New()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public void Create(string content)
+        {
+            _context.posts.Add(new Post { content = content });
+            _context.SaveChanges();
+            Response.Redirect("https://localhost:5001/");
+        }
     }
 }
