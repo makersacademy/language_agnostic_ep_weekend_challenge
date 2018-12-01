@@ -23,7 +23,7 @@ namespace Instagram.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Post>> Index()
+        public ActionResult Index()
         {
             ViewBag.Posts = _context.posts.ToList();
             return View();
@@ -36,19 +36,19 @@ namespace Instagram.Controllers
         }
 
         [HttpPost]
-        public void Create(string content)
+        public ActionResult Create(string content)
         {
             _context.posts.Add(new Post { content = content });
             _context.SaveChanges();
-            Response.Redirect("https://localhost:5001/");
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public void Destroy(int id)
+        public ActionResult Destroy(int id)
         {
             _context.posts.Remove(_context.posts.Find(id));
             _context.SaveChanges();
-            Response.Redirect("https://localhost:5001/");
+            return RedirectToAction("Index");
         }
     }
 }
