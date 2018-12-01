@@ -51,15 +51,14 @@ namespace Instagram.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpGet]
-        public IActionResult Edit(int id)
+        public ActionResult Edit(int id)
         {
             ViewBag.Post = _context.posts.Find(id);
             return View();
         }
 
         [HttpPost]
-        public IActionResult Update(string content, int id)
+        public ActionResult Update(string content, int id)
         {
             Post post = _context.posts.Find(id);
             post.content = content;
