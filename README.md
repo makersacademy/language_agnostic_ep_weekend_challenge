@@ -3,6 +3,12 @@
 ## Challenge ##
 Build Instagram.
 
+### Tech Stack ###
+* ASP.NET MVC 5
+* C#
+* Entity Framework
+* Nunit
+
 ### Specification ###
 * Users can post images.
 * Users can write comments.
@@ -37,3 +43,10 @@ As a user,
 So I can keep my account safe,
 I'd like to sign out of my account.
 ```
+
+## To Do ##
+- [ ] Research Interfaces
+- [ ] Research ActionResult
+- [ ] Implement database migrations
+- [ ] Implement testing database and environment
+- [ ] Add unit tests using Nunit
