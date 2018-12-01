@@ -61,7 +61,7 @@ namespace Instagram.Controllers
         [HttpPost]
         public IActionResult Update(string content, int id)
         {
-            var post = _context.posts.Find(id);
+            Post post = _context.posts.Find(id);
             post.content = content;
             _context.SaveChanges();
             return RedirectToAction("Index");
