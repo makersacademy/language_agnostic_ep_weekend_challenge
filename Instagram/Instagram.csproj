@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Post\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Post\Edit.cshtml" />
