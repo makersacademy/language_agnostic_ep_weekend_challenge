@@ -3,8 +3,12 @@
 
 @foreach (var post in ViewBag.Posts)
 {
-    <li>@post.content</li>
+    <pre>@post.content</pre>
+
     <form action="~/Post/Destroy/@post.id" method="post">
         <input type="submit" value="Delete" />
+    </form>
+    <form action="~/Post/Edit/@post.id" method="post">
+        <input type="submit" value="Edit" />
     </form>
 }
