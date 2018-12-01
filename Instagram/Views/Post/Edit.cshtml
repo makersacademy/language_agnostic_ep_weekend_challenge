@@ -1,7 +1,7 @@
 ﻿@{
 }
 
-<form id="editpost" action="update" method="post">
+<form id="editpost" action="../Update/@ViewBag.Post.id" method="post">
     <textarea form="editpost" name="content" rows="10" cols="60" autofocus="" required="">@ViewBag.Post.content</textarea><br />
     <input type="submit" />
 </form>

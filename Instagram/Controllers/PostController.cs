@@ -51,10 +51,20 @@ namespace Instagram.Controllers
             return RedirectToAction("Index");
         }
 
+        //[HttpGet]
         public IActionResult Edit(int id)
         {
-            ViewBag.Item = _context.posts.Find(id);
+            ViewBag.Post = _context.posts.Find(id);
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Update(string content, int id)
+        {
+            var post = _context.posts.Find(id);
+            post.content = content;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
