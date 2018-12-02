@@ -22,7 +22,14 @@ ShallowWrapper {
       "children": Array [
         <Header />,
         <Body
-          src="https://f4.bcbits.com/img/0010067948_20.jpg"
+          src={
+            Array [
+              "https://f4.bcbits.com/img/0010067948_20.jpg",
+              "https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg",
+              "https://i.redd.it/tfp6ryte6fsy.jpg",
+              "https://vignette.wikia.nocookie.net/rickandmorty/images/1/1c/S2e10_squanchy_not_ricks_bff.png/revision/latest?cb=20160923050635",
+            ]
+          }
         />,
       ],
       "className": "headerDiv",
@@ -43,7 +50,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "src": "https://f4.bcbits.com/img/0010067948_20.jpg",
+          "src": Array [
+            "https://f4.bcbits.com/img/0010067948_20.jpg",
+            "https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg",
+            "https://i.redd.it/tfp6ryte6fsy.jpg",
+            "https://vignette.wikia.nocookie.net/rickandmorty/images/1/1c/S2e10_squanchy_not_ricks_bff.png/revision/latest?cb=20160923050635",
+          ],
         },
         "ref": null,
         "rendered": null,
@@ -61,7 +73,14 @@ ShallowWrapper {
         "children": Array [
           <Header />,
           <Body
-            src="https://f4.bcbits.com/img/0010067948_20.jpg"
+            src={
+              Array [
+                "https://f4.bcbits.com/img/0010067948_20.jpg",
+                "https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg",
+                "https://i.redd.it/tfp6ryte6fsy.jpg",
+                "https://vignette.wikia.nocookie.net/rickandmorty/images/1/1c/S2e10_squanchy_not_ricks_bff.png/revision/latest?cb=20160923050635",
+              ]
+            }
           />,
         ],
         "className": "headerDiv",
@@ -82,7 +101,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "src": "https://f4.bcbits.com/img/0010067948_20.jpg",
+            "src": Array [
+              "https://f4.bcbits.com/img/0010067948_20.jpg",
+              "https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg",
+              "https://i.redd.it/tfp6ryte6fsy.jpg",
+              "https://vignette.wikia.nocookie.net/rickandmorty/images/1/1c/S2e10_squanchy_not_ricks_bff.png/revision/latest?cb=20160923050635",
+            ],
           },
           "ref": null,
           "rendered": null,
