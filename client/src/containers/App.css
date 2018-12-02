@@ -1,20 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+@import url('https://fonts.googleapis.com/css?family=Aldrich|Cabin+Sketch|Julius+Sans+One|Special+Elite|Ubuntu+Mono|Black+Han+Sans');
 
 h1 {
-  font-family: 'Black Han Sans', sans-serif;
+font-family: 'Cabin Sketch', cursive;
 }
 .App {
   text-align: center;
 }
 
-.App-logo {
+div {
+  font-family: 'Aldrich', sans-serif
+}
+/* .fonts {
+  font-family: 'Aldrich', sans-serif;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Ubuntu Mono', monospace;
+} */
+/* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
-}
+} */
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #822b2b;
+  /* min-height: 100vh; */
+  height:200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,15 +34,78 @@ h1 {
   color: white;
 }
 
-.App-link {
+/* .App-link {
   color: #61dafb;
-}
+} */
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.gallery_item {
+  width: 30%;
+  height: 250px;
+  border: 1px solid black;
+}
+.gallery_image {
+  width: 100%;
+  height: 100%;
+   cursor: pointer;
+}
+
+div.gallery_item {
+    border: 1px solid #ccc;
+}
+
+div.gallery_item:hover {
+    border: 1px solid #777;
+}
+
+div.gallery_item img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
