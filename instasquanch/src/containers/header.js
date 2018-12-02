@@ -22,8 +22,8 @@ class Header extends Component {
           <p>
             Welcome to InstaSquanch!
           </p>
-          <Button onClick={this.addImage} className="addButton" buttonText="+" />
-          <Button onClick={this.delImage} className="deleteButton" buttonText="-" />
+          <Button onClick={this.addImage} className="Button" buttonText="+" />
+          <Button onClick={this.delImage} className="Button" buttonText="-" />
         </header>
       </div>
     );
