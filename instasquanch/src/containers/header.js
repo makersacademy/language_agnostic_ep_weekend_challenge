@@ -21,7 +21,7 @@ class Header extends Component {
           <p>
             <h1>{this.props.msg}</h1>
           </p>
-          <Button onClick={this.addImage} buttonText="+" />
+          <Button onClick buttonText="+" />
           <Button onClick={this.delImage} className="Button" buttonText="-" />
         </header>
       </div>
