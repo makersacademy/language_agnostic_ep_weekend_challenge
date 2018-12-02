@@ -52,5 +52,24 @@ namespace Instagram.Controllers
 
             Response.Redirect("Index");
         }
+
+        [HttpPost]
+        public void Delete(int id)
+        {
+            var post = _database.posts.Find(id);
+            _database.Remove(post);
+            _database.SaveChanges();
+            Response.Redirect("../Index");
+        }
+
+        public IActionResult Read(int id)
+        {
+            ViewBag.Post = _database.posts.Find(id);
+            if (ViewBag.Post == null)
+            {
+                return NotFound();
+            }
+            return View();
+        }
     }
 }

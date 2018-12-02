@@ -7,7 +7,7 @@
 <ul>
         @foreach (var post in ViewBag.Posts)
         {
-            <img src="../images/@post.image" style="width: auto;height:400px;" />
+            <a href="~/Home/Read/@post.id"><img src="../images/@post.image" style="width: auto;height:400px;" /></a>
             <br>
             <br>
         }

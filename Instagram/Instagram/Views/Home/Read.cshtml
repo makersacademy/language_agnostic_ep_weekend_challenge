@@ -1,0 +1,14 @@
+﻿@page
+@{
+}
+
+<h2>Post</h2>
+
+<img src="../../images/@ViewBag.Post.image" style="width: auto;height:400px;" />
+
+<br>
+<br>
+
+<form action="~/Home/Delete/@ViewBag.Post.id" method="post">
+    <button type="submit" class="btn btn-info">Delete Post</button>
+</form>
