@@ -44,14 +44,14 @@ namespace Instagram.Controllers
         public ActionResult Create(IFormFile file)
         {
             //string newPath = "/images";
-            string newPath = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+            string newPath = Path.Combine(_hostingEnvironment.WebRootPath, "upload");
             string fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
             string fullPath = Path.Combine(newPath, fileName);
             using (var stream = new FileStream(fullPath, FileMode.Create))
             {
                 file.CopyTo(stream);
             }
-            _context.posts.Add(new Post { image = "/images/" + fileName });
+            _context.posts.Add(new Post { image = "/upload/" + fileName });
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -73,7 +73,7 @@ namespace Instagram.Controllers
         [HttpPost]
         public ActionResult Update(IFormFile file, int id)
         {
-            string newPath = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+            string newPath = Path.Combine(_hostingEnvironment.WebRootPath, "upload");
             string fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
             string fullPath = Path.Combine(newPath, fileName);
             using (var stream = new FileStream(fullPath, FileMode.Create))
@@ -81,7 +81,7 @@ namespace Instagram.Controllers
                 file.CopyTo(stream);
             }
             Post post = _context.posts.Find(id);
-            post.image = "/images/" + fileName;
+            post.image = "/upload/" + fileName;
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

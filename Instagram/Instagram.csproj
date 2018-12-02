@@ -15,6 +15,7 @@
   <ItemGroup>
     <Folder Include="Views\Post\" />
     <Folder Include="Views\User\" />
+    <Folder Include="wwwroot\upload\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Migrations\20181202160314_InitialCreate.cs" />
