@@ -66,7 +66,7 @@ namespace Instagram.Controllers
             else
             {
                 TempData["FlashMessage"] = "Username and password do not match";
-                Response.Redirect("https://localhost:5001/User");
+                Response.Redirect("https://localhost:5001/User/SignIn");
             }
         }
 
