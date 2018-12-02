@@ -19,11 +19,6 @@ namespace Instagram.Controllers
             _context = context;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
         public IActionResult New()
         {
             return View();
@@ -32,9 +27,18 @@ namespace Instagram.Controllers
         [HttpPost]
         public IActionResult Create(string username, string password)
         {
-            _context.users.Add(new User { username = username, password = password });
-            _context.SaveChanges();
-            return Redirect("https://localhost:5001/");
+            var result = _context.users.SingleOrDefault(x => x.username == username);
+            if (result == null)
+            {
+                _context.users.Add(new User { username = username, password = password });
+                _context.SaveChanges();
+                return Redirect("https://localhost:5001/");
+            }
+            else
+            {
+                TempData["Message"] = "User already exists.";
+                return RedirectToAction("New");
+            }
         }
 
         [HttpGet]
@@ -54,6 +58,7 @@ namespace Instagram.Controllers
             }
             else
             {
+                TempData["Message"] = "Login credentials are incorrect.";
                 return RedirectToAction("SignIn");
             }
         }
