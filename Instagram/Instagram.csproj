@@ -17,6 +17,10 @@
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="Views\Post\Edit.cshtml" />
+    <Compile Remove="Migrations\20181202160314_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181202160314_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20181202160731_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181202160731_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\InstagramContextModelSnapshot.cs" />
   </ItemGroup>
 </Project>

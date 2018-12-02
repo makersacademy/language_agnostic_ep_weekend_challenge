@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Session;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Instagram.Models;
 
@@ -16,10 +19,12 @@ namespace Instagram.Controllers
     {
 
         private readonly InstagramContext _context;
+        private IHostingEnvironment _hostingEnvironment;
 
-        public PostController(InstagramContext context)
+        public PostController(InstagramContext context, IHostingEnvironment hostingEnvironment)
         {
             _context = context;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         [HttpGet]
@@ -36,9 +41,17 @@ namespace Instagram.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(string content)
+        public ActionResult Create(IFormFile file)
         {
-            _context.posts.Add(new Post { content = content });
+            //string newPath = "/images";
+            string newPath = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+            string fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+            string fullPath = Path.Combine(newPath, fileName);
+            using (var stream = new FileStream(fullPath, FileMode.Create))
+            {
+                file.CopyTo(stream);
+            }
+            _context.posts.Add(new Post { image = "/images/" + fileName });
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -58,10 +71,17 @@ namespace Instagram.Controllers
         }
 
         [HttpPost]
-        public ActionResult Update(string content, int id)
+        public ActionResult Update(IFormFile file, int id)
         {
+            string newPath = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+            string fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+            string fullPath = Path.Combine(newPath, fileName);
+            using (var stream = new FileStream(fullPath, FileMode.Create))
+            {
+                file.CopyTo(stream);
+            }
             Post post = _context.posts.Find(id);
-            post.content = content;
+            post.image = "/images/" + fileName;
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

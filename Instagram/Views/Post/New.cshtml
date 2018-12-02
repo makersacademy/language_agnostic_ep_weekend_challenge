@@ -1,9 +1,15 @@
 ﻿@{
 }
 
-<div class="p-5">
-    <form id="newpost" action="create" method="post">
-        <textarea form="newpost" name="content" rows="10" cols="60"></textarea><br />
-        <input type="submit" />
-    </form>
-</div>
+@*<div class="p-5">
+        <form id="newpost" action="create" method="post">
+            <textarea form="newpost" name="content" rows="10" cols="60"></textarea><br />
+            <input type="submit" />
+        </form>
+    </div>*@
+
+@using (Html.BeginForm("Create", "Post", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" /><br />
+    <input type="submit" value="OK" />
+}

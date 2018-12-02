@@ -1,14 +1,25 @@
 ﻿@{
 }
 
-@foreach (var post in ViewBag.Posts)
-{
-    <pre>@post.content</pre>
-
-    <form action="~/Post/Destroy/@post.id" method="post">
-        <input type="submit" value="Delete" />
-    </form>
-    <form action="~/Post/Edit/@post.id" method="post">
-        <input type="submit" value="Edit" />
-    </form>
-}
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-3"></div>
+    <div class="col-md-6" style="padding-top: 20px;">
+        <center>
+        @foreach (var post in ViewBag.Posts)
+        {
+            <div style="border: 1px solid grey; background-color: white; padding: 10px; margin-bottom: 10px;">
+                <img class="img-responsive img-rounded" src="@post.image" style="max-height: 400px;" />
+                <br />
+                <form action="~/Post/Edit/@post.id" method="post">
+                    <input type="submit" value="Edit" />
+                </form>
+                <br />
+                <form action="~/Post/Destroy/@post.id" method="post">
+                    <input type="submit" value="Delete" />
+                </form>
+            </div>
+        }
+        </center>
+    </div>
+    <div class="col-md-3"></div>
+</div>
