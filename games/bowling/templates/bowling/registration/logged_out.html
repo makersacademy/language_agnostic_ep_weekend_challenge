@@ -1,0 +1,7 @@
+{% extends "base_generic.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <p>Logged out!</p>
+  <a href="{% url 'bowling:login'%}">Click here to login again.</a>
+{% endblock %}

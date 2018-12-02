@@ -1,22 +1,29 @@
 # Weekend Challenge
 
-This weekend challenge is intended for use at the end, or in the middle of, engineering project 1.  Developers can choose which of 4 projects they build.
+Bowling challenge
+DJANGO / Python / SQLlite
 
-### Instructions
+10 frames
+2 rolls each
+10 pins
 
-1. Fork and clone this repository.
-2. Choose one of the following projects to build an application
-  * Use the same language you've been working with for the last two weeks
-  * You can choose whether or not to use the same framework / libraries that you've been working with for the last two weeks 
+Strike = all 10 in first roll / bonus = total of pins knocked in next 2 rolls
+Spare = all 10 finally down in second / bonus = total of pins knocked in next roll
 
-3. *Immediately* open a Pull Request back to this base GitHub repository (**it will automatically update when you push changes**)
-4. Build the project!
+Database
+
+1. Game (id, playername, date, total score, Frames_played, Strike_count, Spare_count)
+2. Frame (Game id, Frame id, roll1_score, rolls2_score, is_strike, is_spare)
 
 
-#### 1. [RPS](https://github.com/makersacademy/rps-challenge)
+Screens
+  Game Screen
+  1. Start Game
+  2. Provide score
+  3. Your performance
+  4. Hall of fame
 
-#### 2. [Chitter (without users)](https://github.com/makersacademy/chitter-challenge)
-
-#### 3. [Chitter (with user sign up/log in)](https://github.com/makersacademy/chitter-challenge)
-
-#### 4. [Instagram](https://github.com/makersacademy/instagram-challenge)
+  User Screen
+  1. Register
+  2. Login
+  3. Logout
