@@ -35,8 +35,10 @@ namespace Instagram.Controllers
             return View();
         }
 
-        public async void Create(IFormFile file, string fileName)
+        public async void Create(IFormFile file)
         {
+            string fileName = file.FileName;
+
             _database.posts.Add(new Post { image = fileName });
             _database.SaveChanges();
 
