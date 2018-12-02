@@ -18,6 +18,16 @@
     <Content Remove="wwwroot\images\daschund.jpg" />
     <Content Remove="wwwroot\images\golden-retriever.jpg" />
     <Content Remove="wwwroot\images\dachshund.jpg" />
+    <Content Remove="wwwroot\images\TEST" />
+    <Content Remove="wwwroot\images\fghj" />
+    <Content Remove="wwwroot\images\sdafgew" />
+    <Content Remove="wwwroot\images\testing" />
+    <Content Remove="wwwroot\images\another attempt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="images\.DS_Store" />
+    <None Remove="images\kj" />
+    <None Remove="images\lk" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\images\golden-retriever.jpg" />

@@ -1,0 +1,17 @@
+﻿@page
+@{
+}
+
+<h1>Add a post</h1>
+
+@*<form action="Create" method="post">
+    <input type="file" name="file" required=""/>
+    <input type="text" name="fileName" required="" />
+    <input type="submit" />
+</form>*@
+
+<form method="post" enctype="multipart/form-data" asp-action="Create">
+    <input type="file" name="file" />
+    <input type="text" name="fileName" />
+    <input type="submit" value="Upload" />
+</form>
