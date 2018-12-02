@@ -17,20 +17,25 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.models import User
 from django.conf.urls import include
-
 from . import views
+from django.conf.urls import include, url
+from django.contrib.auth import views as auth_views
 
+app_name = "bowling";
+admin.autodiscover()
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/register', views.register, name='register'),
 
-    path('game/new', views.startGame, name ='game_new'),
-    path('game/<int:game_id>/<int:frame_id>/<int:score>/play', views.playGame, name ='game_play'),
-    path('game/<int:game_id>/end', views.endGame, name ='game_end'),
 
-    path('player/record', views.showPlayerStats, name ='player_record'),
-    path('app/record', views.showAppStats, name ='app_record'),
+    path('game/new', views.startGame, name ='start_game'),
+    path('game/play/<int:game_id>', views.playGame, name ='play_game'),
+    path('game/end/<int:game_id>', views.endGame, name ='end_game'),
 
+    path('player/stats', views.showPlayerStats, name ='player_stats'),
+    path('app/stats', views.showAppStats, name ='app_stats'),
+    
 ]

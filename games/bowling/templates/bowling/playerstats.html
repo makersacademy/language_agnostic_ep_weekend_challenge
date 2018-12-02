@@ -1,0 +1,21 @@
+{% extends "bowling/base_generic.html" %}
+
+{% block content %}
+
+<h2><a > Hall of Fame</a></h2>
+<a class="mr-2">Player &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Score &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Date  </a>
+
+  {% for game in top_scores %}
+      <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <small class="text-muted">{{ game.user_id }}</small>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="mr-2" href="#">{{ game.game_total_score }}</a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <small class="text-muted">{{ game.date }}</small>
+
+          </div>
+        </div>
+      </article>
+  {% endfor %}
+{% endblock %}

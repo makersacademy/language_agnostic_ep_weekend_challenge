@@ -1,4 +1,7 @@
-{% extends "base_generic.html" %}
+{% extends "bowling:base_generic.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Login{% endblock %}
 
 {% block content %}
 
@@ -15,26 +18,19 @@
   {% endif %}
 {% endif %}
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<table>
 
-<tr>
-  <td>{{ form.username.label_tag }}</td>
-  <td>{{ form.username }}</td>
-</tr>
+<form method="post">
+  {% csrf_token %}
 
-<tr>
-  <td>{{ form.password.label_tag }}</td>
-  <td>{{ form.password }}</td>
-</tr>
-</table>
+  <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Log In</legend>
+      {{ form|crispy }}
+  </fieldset>
 
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
+  <button type="submit">Login</button>
 </form>
 
 {# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<p><a href="{% url 'bowling:password_reset' %}">Lost password?</a></p>
 
 {% endblock %}

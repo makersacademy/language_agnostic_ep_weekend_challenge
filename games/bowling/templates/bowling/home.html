@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to Bowling</h1><br>
+<h4>This application is written in Django Python and sqlite3</h4><br>
+{% if user.is_authenticated %}
+  <h3>Hi {{ user.username }}!</h3>
+  <p><a href="{% url 'bowling:logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'bowling:login' %}">login</a>
+{% endif %}
+{% endblock %}

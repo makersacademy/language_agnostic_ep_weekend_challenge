@@ -1,4 +1,6 @@
 {% load static %}
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -8,8 +10,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="{% static 'bowling/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'games/bowling/main.css' %}">
 
     {% if title %}
     <title>Lets Go Bowling - {{ title }}</title>
@@ -18,64 +19,62 @@
     {% endif %}
 
        {% if user.is_authenticated %}
-       <li>Welcome: {{ user.get_username }}</li>
-       <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
-       {% else %}
-       <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-       {% endif %}
-     </ul>
+       Welcome: {{ user.get_username }}          -
+       <a href="{% url 'bowling:logout' %}">logout</a></p>
 
+       {% else %}
+       <p><a href="{% url 'bowling:login' %}">login</a></p>
+       {% endif %}
+         <div class="navbar-nav mr-auto">
+           <a class="nav-item nav-link" href="{% url 'bowling:home'%}">Home</a>
+           <a class="nav-item nav-link" href="{% url 'bowling:about'%}">About</a>
+           <a class="nav-item nav-link" href="{% url 'bowling:start_game'%}">New Game</a>
+           <a class="nav-item nav-link" href="{% url 'bowling:player_stats'%}">Your Record</a>
+           <a class="nav-item nav-link" href="{% url 'bowling:app_stats'%}">Hall of Fame</a>
+
+         </div>
   </head>
+  <br>
   <body>
-    <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-        <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'bowling:home'%}">Lets Go Bowling</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'bowling:player_login'%}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'bowling:about'%}">About</a>
-              <a class="nav-item nav-link" href="{% url 'bowling:game_list'%}">Hall of Fame</a>
-              <a class="nav-item nav-link" href="{% url 'bowling:start_game'%}">New Game</a>
-              <a class="nav-item nav-link" href="{% url 'bowling:player_history'%}">Your Record</a>
-            </div>
-            <!-- Navbar Right Side -->
-            <div class="navbar-nav">
-              <a class="nav-item nav-link" href="{% url 'bowling:player_login' %}">Login</a>
-              <a class="nav-item nav-link" href="{% url 'bowling:player_register'%}">Register</a>
-            </div>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="{% url 'bowling:home'%}">Lets go Bowling</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="{% url 'bowling:home'%}">Home</a>
+            <a class="nav-item nav-link" href="{% url 'bowling:about'%}">About</a>
+            <a class="nav-item nav-link" href="{% url 'bowling:start_game'%}">New Game</a>
+            <a class="nav-item nav-link" href="{% url 'bowling:player_stats'%}">Your Record</a>
+            <a class="nav-item nav-link" href="{% url 'bowling:app_stats'%}">Hall of Fame</a>
+
           </div>
-        </div>
-      </nav>
-    </header>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
-          {% block content %}{% endblock %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
+          <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="{% url 'bowling:login' %}">Login</a>
+            <a class="nav-item nav-link" href="{% url 'bowling:register'%}">Register</a>
           </div>
         </div>
       </div>
-    </main>
+    </nav>
+  </header>
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% block content %}{% endblock %}
+      </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+    </div>
+  </main>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 </html>

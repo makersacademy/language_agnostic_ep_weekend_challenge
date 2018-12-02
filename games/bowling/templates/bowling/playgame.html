@@ -1,0 +1,28 @@
+{% extends "bowling/base_generic.html" %}
+
+{% block content %}
+
+<h2><a > Lets play the game</a></h2>
+<form action="/game/play/{{game_id}}" method="post">
+    {% csrf_token %}
+      <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            This is game: {{game_id}} <br>
+            You are playing frame no: {{sequence_no}} and the roll is: {{roll_no}}
+            frame id is {{frame_id}}
+          </div>
+          <input type="hidden" name="sequence_no" value="{{sequence_no}}">
+          <input type="hidden" name="roll_no" value="{{roll_no}}">
+          <input type="hidden" name="frame_id" value="{{frame_id}}">
+
+        </div>
+      </article>
+      <br>
+
+          <table border="1">
+          {{ form.as_p}}
+        </table>
+          <input type="submit" value="Submit">
+      </form>
+{% endblock %}
