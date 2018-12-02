@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Button from '../components/button'
-import logo from '../rick_and_morty_logo.svg';
 import './header.css';
 
 class Header extends Component {
 
 
   addImage() {
-    console.log('Add button tapped')
+
   }
 
   delImage() {
@@ -18,7 +17,7 @@ class Header extends Component {
     return (
       <div className="Header">
         <header className="headerBox">
-          <img src={logo} className="headerLogo" alt="logo" />
+          <img src={this.props.logo} className="headerLogo" alt="logo" />
           <p>
             Welcome to InstaSquanch!
           </p>
