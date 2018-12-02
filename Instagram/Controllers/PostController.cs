@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Instagram.Models;
 
-
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Instagram.Controllers
@@ -30,6 +29,7 @@ namespace Instagram.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.User = HttpContext.Session.GetString("username");
             ViewBag.Posts = _context.posts.ToList();
             return View();
         }
@@ -66,6 +66,7 @@ namespace Instagram.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.User = HttpContext.Session.GetString("username");
             ViewBag.Post = _context.posts.Find(id);
             return View();
         }

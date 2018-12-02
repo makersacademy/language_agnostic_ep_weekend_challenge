@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Instagram.Models;
 
@@ -18,10 +19,10 @@ namespace Instagram.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
 
         public IActionResult New()
         {
@@ -33,6 +34,33 @@ namespace Instagram.Controllers
         {
             _context.users.Add(new User { username = username, password = password });
             _context.SaveChanges();
+            return Redirect("https://localhost:5001/");
+        }
+
+        [HttpGet]
+        public IActionResult SignIn()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AuthenticateSignIn(string username, string password)
+        {
+            var result = _context.users.SingleOrDefault(x => x.username == username);
+            if (result != null && result.password == password)
+            {
+                HttpContext.Session.SetString("username", result.username);
+                return Redirect("https://localhost:5001/");
+            }
+            else
+            {
+                return RedirectToAction("SignIn");
+            }
+        }
+
+        public IActionResult SignOut()
+        {
+            HttpContext.Session.Clear();
             return Redirect("https://localhost:5001/");
         }
     }

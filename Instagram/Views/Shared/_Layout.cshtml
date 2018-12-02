@@ -31,7 +31,16 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
+                        @if (ViewBag.User != null)
+                        {
                         <li><a asp-area="" asp-controller="Post" asp-action="New">New Post</a></li>
+                        <li><a asp-area="" asp-controller="User" asp-action="SignOut">Sign Out</a></li>
+                        }
+                        else
+                        {
+                        <li><a asp-area="" asp-controller="User" asp-action="New">Register</a></li>
+                        <li><a asp-area="" asp-controller="User" asp-action="SignIn">Sign In</a></li>
+                        }
                     </ul>
                 </div>
             </div>
