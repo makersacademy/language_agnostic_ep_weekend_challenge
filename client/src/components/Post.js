@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 import Image from './Image';
 import '../containers/App.css'
-const BASE_URL = 'http://localhost:5001/'
+// const BASE_URL = 'http://localhost:5001/'
 
 const customStyles = {
   content : {

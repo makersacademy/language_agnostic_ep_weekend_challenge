@@ -3,6 +3,10 @@
 h1 {
 font-family: 'Cabin Sketch', cursive;
 }
+
+h2 {
+font-family: 'Special Elite', cursive;
+}
 .App {
   text-align: center;
 }
@@ -10,6 +14,80 @@ font-family: 'Cabin Sketch', cursive;
 div {
   font-family: 'Aldrich', sans-serif
 }
+
+.date {
+  font-size:10px
+}
+
+
+
+  .newButton {
+    font-family: 'Cabin Sketch', cursive;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+      color: black;
+      border: 2px solid #e7e7e7;
+      border-radius:5%
+  }
+
+  .newButton:hover {background-color: #e7e7e7;}
+
+
+
+  .loginButton {
+    font-family: 'Cabin Sketch', cursive;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+      color: black;
+      border: 2px solid #e7e7e7;
+      border-radius:5%
+  }
+
+  .loginButton:hover {background-color: #e7e7e7;}
+
+  .headerButtons{
+    font-family: 'Cabin Sketch', cursive;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+      color: black;
+      border: 2px solid #e7e7e7;
+      border-radius:5%
+  }
+
+  .headerButtons:hover {background-color: #e7e7e7;}
 /* .fonts {
   font-family: 'Aldrich', sans-serif;
 font-family: 'Cabin Sketch', cursive;
@@ -51,7 +129,10 @@ font-family: 'Ubuntu Mono', monospace;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+  text-align: center;
+  margin:auto;
 }
+
 .gallery_item {
   width: 30%;
   height: 250px;
