@@ -22,7 +22,7 @@ class Header extends Component {
           <p>
             Welcome to InstaSquanch!
           </p>
-          <Button onClick={this.addImage} className="Button" buttonText="+" />
+          <Button onClick={this.addImage} buttonText="+" />
           <Button onClick={this.delImage} className="Button" buttonText="-" />
         </header>
       </div>

@@ -27,9 +27,13 @@ describe('LandingPage', () => {
     expect(divs.length).toBeGreaterThan(0)
   })
 
+  it('renders 2 buttons', () => {
+    const buttons = appPage().find('.Button')
+    expect(buttons.length).toBe(2)
+  })
+
   it('should render correctly in "debug" mode', () => {
     const component = shallow(<App debug />);
-
     expect(component).toMatchSnapshot();
   });
 })

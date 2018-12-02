@@ -21,16 +21,42 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Header />,
-        <Body
-          src={
-            Array [
-              "https://f4.bcbits.com/img/0010067948_20.jpg",
-              "https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg",
-              "https://i.redd.it/tfp6ryte6fsy.jpg",
-              "https://vignette.wikia.nocookie.net/rickandmorty/images/1/1c/S2e10_squanchy_not_ricks_bff.png/revision/latest?cb=20160923050635",
-            ]
-          }
-        />,
+        <div
+          className="imageList"
+        >
+          <div
+            className="img"
+          >
+             
+            <Body
+              src="https://f4.bcbits.com/img/0010067948_20.jpg"
+            />
+          </div>
+          <div
+            className="img"
+          >
+             
+            <Body
+              src="https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg"
+            />
+          </div>
+          <div
+            className="img"
+          >
+             
+            <Body
+              src="https://i.redd.it/tfp6ryte6fsy.jpg"
+            />
+          </div>
+          <div
+            className="img"
+          >
+             
+            <Body
+              src="https://i.imgflip.com/tjezd.jpg"
+            />
+          </div>
+        </div>,
       ],
       "className": "headerDiv",
     },
@@ -48,18 +74,168 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "host",
         "props": Object {
-          "src": Array [
-            "https://f4.bcbits.com/img/0010067948_20.jpg",
-            "https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg",
-            "https://i.redd.it/tfp6ryte6fsy.jpg",
-            "https://vignette.wikia.nocookie.net/rickandmorty/images/1/1c/S2e10_squanchy_not_ricks_bff.png/revision/latest?cb=20160923050635",
+          "children": Array [
+            <div
+              className="img"
+            >
+               
+              <Body
+                src="https://f4.bcbits.com/img/0010067948_20.jpg"
+              />
+            </div>,
+            <div
+              className="img"
+            >
+               
+              <Body
+                src="https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg"
+              />
+            </div>,
+            <div
+              className="img"
+            >
+               
+              <Body
+                src="https://i.redd.it/tfp6ryte6fsy.jpg"
+              />
+            </div>,
+            <div
+              className="img"
+            >
+               
+              <Body
+                src="https://i.imgflip.com/tjezd.jpg"
+              />
+            </div>,
           ],
+          "className": "imageList",
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "lisi0",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                <Body
+                  src="https://f4.bcbits.com/img/0010067948_20.jpg"
+                />,
+              ],
+              "className": "img",
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              Object {
+                "instance": null,
+                "key": "0",
+                "nodeType": "class",
+                "props": Object {
+                  "src": "https://f4.bcbits.com/img/0010067948_20.jpg",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": "lisi1",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                <Body
+                  src="https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg"
+                />,
+              ],
+              "className": "img",
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "class",
+                "props": Object {
+                  "src": "https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": "lisi2",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                <Body
+                  src="https://i.redd.it/tfp6ryte6fsy.jpg"
+                />,
+              ],
+              "className": "img",
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              Object {
+                "instance": null,
+                "key": "2",
+                "nodeType": "class",
+                "props": Object {
+                  "src": "https://i.redd.it/tfp6ryte6fsy.jpg",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": "lisi3",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                <Body
+                  src="https://i.imgflip.com/tjezd.jpg"
+                />,
+              ],
+              "className": "img",
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              Object {
+                "instance": null,
+                "key": "3",
+                "nodeType": "class",
+                "props": Object {
+                  "src": "https://i.imgflip.com/tjezd.jpg",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
       },
     ],
     "type": "div",
@@ -72,16 +248,42 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Header />,
-          <Body
-            src={
-              Array [
-                "https://f4.bcbits.com/img/0010067948_20.jpg",
-                "https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg",
-                "https://i.redd.it/tfp6ryte6fsy.jpg",
-                "https://vignette.wikia.nocookie.net/rickandmorty/images/1/1c/S2e10_squanchy_not_ricks_bff.png/revision/latest?cb=20160923050635",
-              ]
-            }
-          />,
+          <div
+            className="imageList"
+          >
+            <div
+              className="img"
+            >
+               
+              <Body
+                src="https://f4.bcbits.com/img/0010067948_20.jpg"
+              />
+            </div>
+            <div
+              className="img"
+            >
+               
+              <Body
+                src="https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg"
+              />
+            </div>
+            <div
+              className="img"
+            >
+               
+              <Body
+                src="https://i.redd.it/tfp6ryte6fsy.jpg"
+              />
+            </div>
+            <div
+              className="img"
+            >
+               
+              <Body
+                src="https://i.imgflip.com/tjezd.jpg"
+              />
+            </div>
+          </div>,
         ],
         "className": "headerDiv",
       },
@@ -99,18 +301,168 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "host",
           "props": Object {
-            "src": Array [
-              "https://f4.bcbits.com/img/0010067948_20.jpg",
-              "https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg",
-              "https://i.redd.it/tfp6ryte6fsy.jpg",
-              "https://vignette.wikia.nocookie.net/rickandmorty/images/1/1c/S2e10_squanchy_not_ricks_bff.png/revision/latest?cb=20160923050635",
+            "children": Array [
+              <div
+                className="img"
+              >
+                 
+                <Body
+                  src="https://f4.bcbits.com/img/0010067948_20.jpg"
+                />
+              </div>,
+              <div
+                className="img"
+              >
+                 
+                <Body
+                  src="https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg"
+                />
+              </div>,
+              <div
+                className="img"
+              >
+                 
+                <Body
+                  src="https://i.redd.it/tfp6ryte6fsy.jpg"
+                />
+              </div>,
+              <div
+                className="img"
+              >
+                 
+                <Body
+                  src="https://i.imgflip.com/tjezd.jpg"
+                />
+              </div>,
             ],
+            "className": "imageList",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "lisi0",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " ",
+                  <Body
+                    src="https://f4.bcbits.com/img/0010067948_20.jpg"
+                  />,
+                ],
+                "className": "img",
+              },
+              "ref": null,
+              "rendered": Array [
+                " ",
+                Object {
+                  "instance": null,
+                  "key": "0",
+                  "nodeType": "class",
+                  "props": Object {
+                    "src": "https://f4.bcbits.com/img/0010067948_20.jpg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": "lisi1",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " ",
+                  <Body
+                    src="https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg"
+                  />,
+                ],
+                "className": "img",
+              },
+              "ref": null,
+              "rendered": Array [
+                " ",
+                Object {
+                  "instance": null,
+                  "key": "1",
+                  "nodeType": "class",
+                  "props": Object {
+                    "src": "https://i.ytimg.com/vi/0vfLj6kaSFY/maxresdefault.jpg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": "lisi2",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " ",
+                  <Body
+                    src="https://i.redd.it/tfp6ryte6fsy.jpg"
+                  />,
+                ],
+                "className": "img",
+              },
+              "ref": null,
+              "rendered": Array [
+                " ",
+                Object {
+                  "instance": null,
+                  "key": "2",
+                  "nodeType": "class",
+                  "props": Object {
+                    "src": "https://i.redd.it/tfp6ryte6fsy.jpg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": "lisi3",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " ",
+                  <Body
+                    src="https://i.imgflip.com/tjezd.jpg"
+                  />,
+                ],
+                "className": "img",
+              },
+              "ref": null,
+              "rendered": Array [
+                " ",
+                Object {
+                  "instance": null,
+                  "key": "3",
+                  "nodeType": "class",
+                  "props": Object {
+                    "src": "https://i.imgflip.com/tjezd.jpg",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
         },
       ],
       "type": "div",
