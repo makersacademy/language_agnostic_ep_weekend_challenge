@@ -42,8 +42,38 @@ namespace Instagram.Controllers
                 _database.users.Add(new User { username = username, password = password });
                 _database.SaveChanges();
                 HttpContext.Session.SetString("username", username);
-                Response.Redirect("../Home");   
+                Response.Redirect("../Home");
             }
+        }
+
+        [HttpGet]
+        public IActionResult SignIn()
+        {
+            ViewBag.Message = TempData["FlashMessage"];
+            return View();
+
+        }
+
+        [HttpPost]
+        public void SignIn(string username, string password)
+        {
+            var user = _database.users.SingleOrDefault(c => c.username == username);
+            if (user != null)
+            {
+                HttpContext.Session.SetString("username", username);
+                Response.Redirect("../Home");
+            }
+            else
+            {
+                TempData["FlashMessage"] = "Username and password do not match";
+                Response.Redirect("https://localhost:5001/User");
+            }
+        }
+
+        public void SignOut()
+        {
+            HttpContext.Session.Clear();
+            Response.Redirect("../Home");
         }
     }
 }

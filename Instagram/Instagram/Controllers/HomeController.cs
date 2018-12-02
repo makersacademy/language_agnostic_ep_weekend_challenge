@@ -34,6 +34,7 @@ namespace Instagram.Controllers
 
         public IActionResult New()
         {
+            ViewBag.Username = HttpContext.Session.GetString("username");
             return View();
         }
 
@@ -66,6 +67,7 @@ namespace Instagram.Controllers
 
         public IActionResult Read(int id)
         {
+            ViewBag.Username = HttpContext.Session.GetString("username");
             ViewBag.Post = _database.posts.Find(id);
             if (ViewBag.Post == null)
             {
