@@ -12,33 +12,35 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      logo: null,
+      logo: logo,
       images: []
     }
   }
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({logo: logo, images: fakeServerData})
+      this.setState({logo: logo, images: fakeServerData, ready: true})
     },1000)
   }
 
   render() {
     return (
       <div className='headerDiv'>
-        {this.state.logo ?
-          <Header logo={this.state.logo}/>
-        : <h1 style={{fontSize: '20px', color:'red', textAlign:'center',}}>Squanching...</h1>
-    }
-          <div className='imageList'>
-            {this.state.images.map ((image, index) => {
-              return <div className ='img' key={'lisi' + index}> <Body image={image} key={index}/></div>
-              })
-            }
+        {this.state.ready
+          ?<div>
+          <Header logo={this.state.logo} msg="Welcome to InstaSquanch!"/>
+            <div className='imageList'>
+              {this.state.images.map ((image, index) => {
+                return <div className ='img' key={'lisi' + index}> <Body image={image} key={index}/></div>
+                })
+              }
+
+            </div>
           </div>
-      </div>
-    );
-  }
+          :<Header logo={this.state.logo} msg="Squanching..."/>}
+        </div>
+      );
+    }
 }
 
 export default App;

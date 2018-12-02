@@ -10,16 +10,16 @@ class Header extends Component {
   }
 
   delImage() {
-    console.log('Delete button tapped')
+
   }
 
   render() {
     return (
       <div className="Header">
         <header className="headerBox">
-          <img src={this.props.logo} className="headerLogo" alt="logo" />
+          <img src={this.props.logo} className="headerLogo" />
           <p>
-            Welcome to InstaSquanch!
+            <h1>{this.props.msg}</h1>
           </p>
           <Button onClick={this.addImage} buttonText="+" />
           <Button onClick={this.delImage} className="Button" buttonText="-" />
