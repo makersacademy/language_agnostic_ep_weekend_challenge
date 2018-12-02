@@ -24,9 +24,13 @@ router.post('/login',(req,res)=>{
   // Users.find()
   .sort({_id:-1})
   // .then(console.log(users => res.json(users)))
+  // .then(console.log(results))
   .then(users => res.json(users))
+// console.log(users)
 // .then(console.log(res.json(users)))
-})
+}
+
+)
 
 //  @route    POST api/posts
 // @describe  Create a post

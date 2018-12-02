@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ImageFilter from 'react-image-filter';
 const BASE_URL = 'http://localhost:5001/';
+
 
 class FileUpload extends Component {
   constructor(props) {
@@ -9,7 +11,7 @@ class FileUpload extends Component {
       images: [],
       imageUrls: [],
       message: '',
-      user: '',
+      user: sessionStorage.getItem('myData'),
       caption: ''
     }
   }
@@ -58,7 +60,7 @@ class FileUpload extends Component {
       console.log("db")
 
     })
-    .then(window.location.reload())
+    // .then(window.location.reload())
     }
 
     // Once all the files are uploaded
@@ -73,10 +75,7 @@ class FileUpload extends Component {
     return (
       <div>
         <div className="col-sm-12">
-          <div>
-          <label htmlFor="username">Username: </label>
-            <input type="text" onChange={this.handleChange} name="user" id="user"/>
-          </div>
+
           <div>
           <label htmlFor="caption">Caption: </label>
             <textarea onChange={this.handleChange} name="caption" id="caption"></textarea>
@@ -94,9 +93,13 @@ class FileUpload extends Component {
         <div className="row col-lg-12">
           {
           this.state.imageUrls.map((url, i) => (
-            <div className="col-lg-2" key={i}>
-              <img src={BASE_URL + url} className="img-rounded img-responsive"
-              alt="not available"/><br/>
+          <div className="col-lg-2" width="50%" key={i}>  <ImageFilter
+       image={BASE_URL + url}
+       filter={ 'sepia' } // see docs beneath
+       // colorOne={ [40, 250, 250] }
+       // colorTwo={ [250, 150, 30] }
+     />
+
             </div>
           ))
           }

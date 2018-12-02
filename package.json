@@ -33,6 +33,7 @@
     "express-fileupload": "^1.0.0",
     "mongoose": "^5.3.14",
     "multer": "^1.4.1",
+    "react-image-filter": "^0.1.2",
     "simple-react-modal": "^0.5.1"
   },
   "devDependencies": {

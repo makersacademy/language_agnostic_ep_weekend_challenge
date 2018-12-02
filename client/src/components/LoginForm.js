@@ -39,6 +39,9 @@ class LoginForm extends Component {
     // console.log(self.state.results)
 self.props.setUser(self.state.username)
   }
+  else {alert('no user')
+// self.props.setUser(null)
+}
 
   })
 
