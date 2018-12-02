@@ -10,5 +10,6 @@ namespace Instagram.Models
         }
 
         public DbSet<Post> posts { get; set; }
+        public DbSet<User> users { get; set; }
     }
 }

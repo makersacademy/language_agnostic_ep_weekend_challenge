@@ -4,6 +4,11 @@
 
 <h1>Instagram</h1>
 
+@if (ViewBag.Username != null)
+{
+    <h2>Welcome @ViewBag.Username</h2>
+}
+
 <ul>
         @foreach (var post in ViewBag.Posts)
         {

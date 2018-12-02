@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+<h1>Register</h1>
+
+<form action="Create" method="post">
+    <input type="text" name="username" required="" autofocus="" placeholder="username" />
+    <input type="password" name="password" required="" placeholder="password" />
+    <input type="submit" />
+</form>
+<br>
+@ViewBag.Message

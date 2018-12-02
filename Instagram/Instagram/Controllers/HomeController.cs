@@ -9,6 +9,7 @@ using Instagram.Models;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Session;
 
 namespace Instagram.Controllers
 {
@@ -26,6 +27,7 @@ namespace Instagram.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Username = HttpContext.Session.GetString("username");
             ViewBag.Posts = _database.posts.ToList();
             return View();
         }
