@@ -10,6 +10,8 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 /* Carousel */
@@ -34,4 +36,17 @@ body {
     .carousel-caption {
         display: none;
     }
+}
+
+.navbar-link {
+    font-size: 25px;
+    color: grey;
+}
+
+.navigation {
+    padding-top: 5px;
+}
+
+.navbar-link:hover {
+    color: black;
 }

@@ -25,6 +25,7 @@
     <Content Remove="wwwroot\images\sdafgew" />
     <Content Remove="wwwroot\images\testing" />
     <Content Remove="wwwroot\images\another attempt" />
+    <Content Remove="wwwroot\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="images\.DS_Store" />
