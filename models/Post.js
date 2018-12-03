@@ -10,7 +10,11 @@ const PostSchema = new Schema({
   },
   caption: {
     type: String,
-    required: true
+    required: false
+  },
+  filters: {
+    type: String,
+    required: false
   },
   user: {
     type: String,

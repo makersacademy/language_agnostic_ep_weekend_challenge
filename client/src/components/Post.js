@@ -19,11 +19,13 @@ class Post extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {  modalIsOpen: false}
+    this.state = {  modalIsOpen: false,id:this.props.image._id}
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.addComment = this.addComment.bind(this);
+    // console.log(this.props.image._id)
 
   }
 
@@ -40,6 +42,10 @@ class Post extends Component {
     this.setState({modalIsOpen: false});
   }
 
+  addComment(id) {
+    alert(this.state.id)
+  }
+
 
   render() {
     return (
@@ -54,6 +60,9 @@ class Post extends Component {
            contentLabel="Example Modal"
          >
          <Image image={this.props.image}/>
+         <div>Add comments</div>
+         <div><textarea name="comments" id="comments"></textarea></div>
+         <button type="submit" onClick={this.addComment}>Add comment</button>
  </Modal>
       </div>
     )

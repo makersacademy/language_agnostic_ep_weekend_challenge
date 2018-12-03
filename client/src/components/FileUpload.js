@@ -12,7 +12,8 @@ class FileUpload extends Component {
       imageUrls: [],
       message: '',
       user: sessionStorage.getItem('myData'),
-      caption: ''
+      caption: '',
+      filter:''
     }
   }
 
@@ -23,6 +24,19 @@ class FileUpload extends Component {
     console.log(this.state)
   }
 
+  updateFilters = () => {
+    console.log('filters')
+    var formdata = {filters:'sepia'}
+    return axios.patch(BASE_URL + 'api/images/' + this.state.id , formdata)
+    .then(response => {
+      console.log(response.data)
+      ;
+    console.log("db filters")
+
+  })
+  // .then(window.location.reload())
+  }
+
   selectImages = (event) => {
     let images = []
     for (var i = 0; i < event.target.files.length; i++) {
@@ -31,6 +45,7 @@ class FileUpload extends Component {
     images = images.filter(image => image.name.match(/\.(jpg|jpeg|png|gif)$/))
     let message = `${images.length} valid image(s) selected`
     this.setState({ images, message })
+    // console.log(this.state.message)
   }
 
   uploadImages = () => {
@@ -42,6 +57,7 @@ class FileUpload extends Component {
       // Make an AJAX upload request using Axios
       return axios.post(BASE_URL + 'upload', data)
       .then(response => {
+
         this.setState({
         imageUrls: [ response.data.imageUrl, ...this.state.imageUrls ]
       });
@@ -54,19 +70,24 @@ class FileUpload extends Component {
       var formdata = {image:this.state.imageUrls[0],caption:this.state.caption,user:this.state.user}
       return axios.post(BASE_URL + 'api/images', formdata)
       .then(response => {
-      //   this.setState({
-      //   imageUrls: [ response.data.imageUrl, ...this.state.imageUrls ]
-      // });
+        console.log(response.data)
+        this.setState({
+        id: response.data._id
+      });
       console.log("db")
 
     })
-    // .then(window.location.reload())
+    .then(window.location.reload())
     }
+
+
 
     // Once all the files are uploaded
     axios.all(uploaders).then(() => {
       console.log('done');
     }).catch(err => alert(err.message));
+
+
   }
 
 
@@ -84,26 +105,32 @@ class FileUpload extends Component {
             <label htmlFor="image">Select your image: </label><input className="form-control " id="image" name="image" type="file" onChange={this.selectImages} multiple/>
           </div>
           <p className="text-info">{this.state.message}</p>
+          <div className="row col-lg-12">
+            {
+            this.state.imageUrls.map((url, i) => (
+            <div className="gallery_item centered"  key={i}>  <ImageFilter
+         image={BASE_URL + url}
+         filter={ 'sepia' } // see docs beneath
+         // colorOne={ [40, 250, 250] }
+         // colorTwo={ [250, 150, 30] }
+       />
+
+              </div>
+            ))
+            }
+          </div>
           <div className="col-sm-4">
             <button className="btn btn-primary" value="Submit"
             onClick={this.uploadImages}>Submit</button>
           </div>
+
+          {/*<div className="col-sm-4">
+            <button className="btn btn-primary" value="Submit"
+            onClick={this.updateFilters}>Update filter</button>
+          </div>*/}
         </div>
 
-        <div className="row col-lg-12">
-          {
-          this.state.imageUrls.map((url, i) => (
-          <div className="col-lg-2" width="50%" key={i}>  <ImageFilter
-       image={BASE_URL + url}
-       filter={ 'sepia' } // see docs beneath
-       // colorOne={ [40, 250, 250] }
-       // colorTwo={ [250, 150, 30] }
-     />
 
-            </div>
-          ))
-          }
-        </div>
       </div>
     );
   }

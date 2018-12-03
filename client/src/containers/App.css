@@ -132,7 +132,9 @@ font-family: 'Ubuntu Mono', monospace;
   text-align: center;
   margin:auto;
 }
-
+.centered {
+  text-alight:center;
+}
 .gallery_item {
   width: 30%;
   height: 250px;
