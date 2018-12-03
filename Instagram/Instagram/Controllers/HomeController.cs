@@ -29,6 +29,21 @@ namespace Instagram.Controllers
         {
             ViewBag.Username = HttpContext.Session.GetString("username");
             ViewBag.Posts = _database.posts.ToList();
+
+            var posts =
+                from p in _database.posts
+                join u in _database.users
+                on p.user_id equals u.id
+                select new PostViewModel
+                {
+                    id = p.id,
+                    image = p.image,
+                    caption = p.caption,
+                    username = u.username
+                };
+
+            ViewBag.NewPosts = posts;
+
             return View();
         }
 

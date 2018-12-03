@@ -10,8 +10,9 @@
 }
 
 <ul>
-        @foreach (var post in ViewBag.Posts)
+        @foreach (var post in ViewBag.NewPosts)
         {
+            <h3>@post.username</h3>
             <a href="~/Home/Read/@post.id"><img src="../images/@post.image" style="width: auto;height:400px;" /></a>
             <br>
             @post.caption
@@ -19,5 +20,3 @@
             <br>
         }
 </ul>
-
-@*~/Projects/Makers/Week_8/language_agnostic_ep_weekend_challenge/*@
