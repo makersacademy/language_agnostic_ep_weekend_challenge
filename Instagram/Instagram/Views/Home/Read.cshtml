@@ -2,13 +2,18 @@
 @{
 }
 
-<h2>Post</h2>
+<h2>@ViewBag.Username
+posted:</h2>
 
 <img src="../../images/@ViewBag.Post.image" style="width: auto;height:400px;" />
+<p>@ViewBag.Post.caption</p>
 
 <br>
 <br>
 
+@if (ViewBag.UserID == ViewBag.Post.user_id)
+{
 <form action="~/Home/Delete/@ViewBag.Post.id" method="post">
     <button type="submit" class="btn btn-info">Delete Post</button>
 </form>
+}
