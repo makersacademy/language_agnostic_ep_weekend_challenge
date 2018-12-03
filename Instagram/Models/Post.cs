@@ -6,6 +6,6 @@ namespace Instagram.Models
     {
         public int id { get; set; }
         public string image { get; set; }
-        public User User { get; set; }
+        public User user { get; set; }
     }
 }

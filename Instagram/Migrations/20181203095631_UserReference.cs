@@ -28,23 +28,23 @@ namespace Instagram.Migrations
                     id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     image = table.Column<string>(nullable: true),
-                    Userid = table.Column<int>(nullable: true)
+                    userid = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_posts", x => x.id);
                     table.ForeignKey(
-                        name: "FK_posts_users_Userid",
-                        column: x => x.Userid,
+                        name: "FK_posts_users_userid",
+                        column: x => x.userid,
                         principalTable: "users",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_posts_Userid",
+                name: "IX_posts_userid",
                 table: "posts",
-                column: "Userid");
+                column: "userid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

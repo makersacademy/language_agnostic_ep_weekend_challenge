@@ -24,13 +24,13 @@ namespace Instagram.Migrations
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("Userid");
-
                     b.Property<string>("image");
+
+                    b.Property<int?>("userid");
 
                     b.HasKey("id");
 
-                    b.HasIndex("Userid");
+                    b.HasIndex("userid");
 
                     b.ToTable("posts");
                 });
@@ -51,9 +51,9 @@ namespace Instagram.Migrations
 
             modelBuilder.Entity("Instagram.Models.Post", b =>
                 {
-                    b.HasOne("Instagram.Models.User", "User")
+                    b.HasOne("Instagram.Models.User", "user")
                         .WithMany()
-                        .HasForeignKey("Userid");
+                        .HasForeignKey("userid");
                 });
 #pragma warning restore 612, 618
         }
