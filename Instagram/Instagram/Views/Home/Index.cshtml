@@ -10,7 +10,7 @@
 <ul>
         @foreach (var post in ViewBag.NewPosts)
         {
-            <h3>@post.username</h3>
+            <h3>@post.username - @String.Format("{0: dd/MM/yyyy HH:mm}", post.datetime)</h3>
             <a href="~/Home/Read/@post.id"><img src="../images/@post.image" style="width: auto;height:400px;" /></a>
             <br>
             @post.caption

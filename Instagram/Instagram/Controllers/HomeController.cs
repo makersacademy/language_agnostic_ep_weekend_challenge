@@ -28,7 +28,6 @@ namespace Instagram.Controllers
         public IActionResult Index()
         {
             ViewBag.Username = HttpContext.Session.GetString("username");
-            ViewBag.Posts = _database.posts.ToList();
 
             var posts =
                 from p in _database.posts
@@ -39,11 +38,13 @@ namespace Instagram.Controllers
                     id = p.id,
                     image = p.image,
                     caption = p.caption,
-                    username = u.username
-                };
+                    username = u.username,
+                    datetime = p.datetime
+            };
 
-            ViewBag.NewPosts = posts;
-
+            posts.ToList();
+            ViewBag.NewPosts = posts.OrderByDescending(x => x.datetime);
+            
             return View();
         }
 
@@ -65,7 +66,7 @@ namespace Instagram.Controllers
 
             int id = HttpContext.Session.GetInt32("id") ?? default(int);
 
-            _database.posts.Add(new Post { image = fileName, caption = caption, user_id = id });
+            _database.posts.Add(new Post { image = fileName, caption = caption, user_id = id, datetime = DateTime.Now });
             _database.SaveChanges();
 
             var uploads = Path.Combine(_environment.WebRootPath, "images");

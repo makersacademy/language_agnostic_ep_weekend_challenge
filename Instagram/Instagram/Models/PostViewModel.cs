@@ -7,5 +7,6 @@ namespace Instagram.Models
         public string image { get; set; }
         public string caption { get; set; }
         public string username { get; set; }
+        public DateTime datetime { get; set; }
     }
 }
