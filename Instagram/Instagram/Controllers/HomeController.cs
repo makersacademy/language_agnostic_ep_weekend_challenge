@@ -35,6 +35,12 @@ namespace Instagram.Controllers
         public IActionResult New()
         {
             ViewBag.Username = HttpContext.Session.GetString("username");
+
+            if (ViewBag.Username == null)
+            {
+                Response.Redirect("Index");
+            }
+
             return View();
         }
 
@@ -42,7 +48,9 @@ namespace Instagram.Controllers
         {
             string fileName = file.FileName;
 
-            _database.posts.Add(new Post { image = fileName, caption = caption });
+            int id = HttpContext.Session.GetInt32("id") ?? default(int);
+
+            _database.posts.Add(new Post { image = fileName, caption = caption, user_id = id });
             _database.SaveChanges();
 
             var uploads = Path.Combine(_environment.WebRootPath, "images");

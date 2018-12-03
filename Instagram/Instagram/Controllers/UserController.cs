@@ -42,6 +42,8 @@ namespace Instagram.Controllers
                 _database.users.Add(new User { username = username, password = password });
                 _database.SaveChanges();
                 HttpContext.Session.SetString("username", username);
+                var newuser = _database.users.SingleOrDefault(c => c.username == username);
+                HttpContext.Session.SetInt32("id", newuser.id);
                 Response.Redirect("../Home");
             }
         }
@@ -61,6 +63,7 @@ namespace Instagram.Controllers
             if (user != null)
             {
                 HttpContext.Session.SetString("username", username);
+                HttpContext.Session.SetInt32("id", user.id);
                 Response.Redirect("../Home");
             }
             else
