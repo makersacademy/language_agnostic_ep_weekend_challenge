@@ -94,6 +94,8 @@ namespace Instagram.Controllers
             ViewBag.Username = HttpContext.Session.GetString("username");
             ViewBag.UserID = HttpContext.Session.GetInt32("id");
             ViewBag.Post = _database.posts.Find(id);
+            ViewBag.PostUser = _database.users.Find(ViewBag.Post.user_id);
+
             if (ViewBag.Post == null)
             {
                 return NotFound();

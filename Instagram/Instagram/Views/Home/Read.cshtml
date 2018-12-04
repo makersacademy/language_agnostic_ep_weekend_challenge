@@ -2,8 +2,10 @@
 @{
 }
 
-<h2>@ViewBag.Username
-posted:</h2>
+<h2>
+    @ViewBag.PostUser.username
+posted:
+</h2>
 
 <img src="../../images/@ViewBag.Post.image" style="width: auto;height:400px;" />
 <p>@ViewBag.Post.caption</p>
@@ -17,3 +19,4 @@ posted:</h2>
     <button type="submit" class="btn btn-info">Delete Post</button>
 </form>
 }
+
