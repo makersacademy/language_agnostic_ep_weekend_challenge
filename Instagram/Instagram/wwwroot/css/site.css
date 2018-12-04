@@ -50,3 +50,7 @@ body {
 .navbar-link:hover {
     color: black;
 }
+
+.preview {
+    height: 400px;
+}
