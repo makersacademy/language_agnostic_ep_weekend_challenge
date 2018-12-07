@@ -85,9 +85,14 @@ public class Rps {
                 System.out.println("Computer: " + computerScore);
                 System.out.println(playerName + ": " + playerScore);
             }
+        }
+        
+          if (playerScore == 5) {
+              System.out.println("You got 5 points! You win!");
+              counter++;
+          } else if (computerScore == 5) {
+              System.out.println("Computer got 5 points! You lose!");
           }
       }
-      
     }
-    
 }
