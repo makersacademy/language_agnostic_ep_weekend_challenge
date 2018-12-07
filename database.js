@@ -86,7 +86,8 @@ exports.login = function(req, res) {
     else if (password == users.password){
       //Represents a sucessfull login
       req.session.username = users.username;
-      console.log('User ' + req.session.username + ' logged in');
+      req.session.userid = users.id;
+      console.log('User ' + req.session.username + ' logged in, UserID: ' + req.session.userid);
       res.redirect('/home');
     }
     else {
