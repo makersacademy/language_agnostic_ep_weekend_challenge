@@ -43,14 +43,51 @@ public class Rps {
                 computerScore++;
                 System.out.println("Computer: " + computerScore);
                 System.out.println(playerName + ": " + playerScore);
+                
+            } else if (computerChoice == 3) {
+                System.out.println("Computer selected scissors.");
+                System.out.println("Well done " + playerName + " , you won this round.");
+                playerScore++;
+                System.out.println("Computer: " + computerScore);
+                System.out.println(playerName + ": " + playerScore);
             }
             
+            
         } else if (playerChoice == 2) {
+            if (computerChoice == 1) {
+                System.out.println("Computer selected rock");
+                System.out.println("Well done " + playerName + " , you won this round.");
+                playerScore++;
+                System.out.println("Computer: " + computerScore);
+                System.out.println(playerName + ": " + playerScore);
+                
+            } else if (computerChoice == 3) {
+                System.out.println("Computer selected scissors.");
+                System.out.println("Sorry " + playerName + ", you lost this round.");
+                computerScore++;
+                System.out.println("Computer: " + computerScore);
+                System.out.println(playerName + ": " + playerScore);
+            }
+            
             
         } else if (playerChoice == 3) {
-            
-        }
+            if (computerChoice == 1) {
+                System.out.println("Computer selected rock.");
+                System.out.println("Sorry " + playerName + ", you lost this round.");
+                computerScore++;
+                System.out.println("Computer: " + computerScore);
+                System.out.println(playerName + ": " + playerScore);
+                
+            } else if (computerChoice == 2) {
+                System.out.println("Computer selected paper.");
+                System.out.println("Well done " + playerName + " , you won this round.");
+                playerScore++;
+                System.out.println("Computer: " + computerScore);
+                System.out.println(playerName + ": " + playerScore);
+            }
+          }
       }
+      
     }
     
 }
