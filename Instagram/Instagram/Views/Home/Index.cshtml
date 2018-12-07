@@ -7,14 +7,16 @@
     <h2>Welcome @ViewBag.Username</h2>
 }
 
-<ul>
-        @foreach (var post in ViewBag.NewPosts)
-        {
-            <h3>@post.username - @String.Format("{0: dd/MM/yyyy HH:mm}", post.datetime)</h3>
-            <a href="~/Home/Read/@post.id"><img src="../images/@post.image" style="width: auto;height:400px;" /></a>
-            <br>
-            @post.caption
-            <br>
-            <br>
-        }
-</ul>
+@foreach (var post in ViewBag.NewPosts)
+{
+    <div class="post">
+        <h3 class="username" >@post.username</h3>
+        <a href="~/Home/Read/@post.id"><img src="../images/@post.image" class="postimage" /></a>
+        <br>
+        <p class="caption"><span class="caption-username">@post.username</span> @post.caption
+        <br>
+        <span class="timestamp">@String.Format("{0: dd/MM/yyyy HH:mm}", post.datetime)</span></p>
+    </div>
+    <br>
+    <br>
+}

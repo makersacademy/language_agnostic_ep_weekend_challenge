@@ -54,3 +54,37 @@ body {
 .preview {
     height: 400px;
 }
+
+.post {
+    margin: 0 auto;
+    width: 602px;
+    border: solid grey 1px;
+    background-color: white;
+}
+
+.postimage {
+    max-height: 600px;
+    max-width: 600px;
+}
+
+.username {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.caption {
+    font-size: 15px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+.caption-username {
+    font-weight: bold;
+}
+
+.timestamp {
+    color: grey;
+    font-size: 12px;
+}
