@@ -38,4 +38,4 @@ As a user
 So that I can speak to my friends
 I should be able to leave a comment on their posts
 
-**In this project I worked with Rhydian(rhyds on GitHub) for some of the project**
+**In this project I worked with Rhydian(rhyds on GitHub)**
