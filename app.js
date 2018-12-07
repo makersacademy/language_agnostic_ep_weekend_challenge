@@ -21,7 +21,12 @@ app.use(function(req, res, next) {
 });
 
 app.get('/home', (req, res) => {
-  db.getPosts(req, res);
+  if (req.session.userid == null) {
+    res.sendFile(__dirname + '/views/login.html');
+  }
+  else {
+    db.getPosts(req, res);
+  }
 });
 app.get('/', (req, res) => res.sendFile(__dirname + '/views/login.html'));
 app.get('/register', (req, res) => res.sendFile(__dirname + '/views/register.html'));
@@ -34,9 +39,15 @@ app.get('/post', (req, res) => {
     res.sendFile(__dirname + '/views/post.html');
   }
 });
+app.get('/logout', (req, res) => {
+  req.session.userid = null;
+  req.session.username = null;
+  res.redirect('/login');
+});
 
 app.post('/register', db.register);
 app.post('/login', db.login);
 app.post('/post', db.post);
+app.post('/comment', db.comment);
 
 app.listen(port, () => console.log(`The app is running on port: ${port}! Make sure to open it in your browser!`));

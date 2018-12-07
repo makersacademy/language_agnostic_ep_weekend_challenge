@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Acebook</title>
+  <title>WINstagram</title>
   <script>
   //var myVar = <%= data %>;
   //console.log(<%=data%>);
@@ -24,16 +24,20 @@
 <body>
   <div>
     <div class="jumbotron">
-        <p>
-          <% for (var i=0; i < data.length; i++) { %>
-            <div id="postbox">
-            <h2><%= data[i].dataValues.user %></h2><br>
-            <img src="<%= data[i].dataValues.imageSrc %>" height="200" width="300"><br>
-            <h3><%= data[i].dataValues.caption %></h3><br>
-          </div>
-            <% } %>
-          </p>
-        </div>
+      <p>
+        <% for (var i=0; i < data.length; i++) { %>
+          <div id="postbox">
+            <h4><%= data[i].dataValues.user %></h4><br>
+            <img src="<%= data[i].dataValues.imageSrc %>" height="350" width="500"><br>
+            <h4><%= data[i].dataValues.caption %></h4><br>
+            <form action="/comment" method="POST" class="form-horizontal">
+              <input type="text" name="comment" placeholder="Comment...">
+              <input type="submit" name="Submit" value="Post" class="btn"><br>
+            </form>
+          </div><br>
+          <% } %>
+        </p>
       </div>
-    </body>
-    </html>
+    </div>
+  </body>
+  </html>

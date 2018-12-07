@@ -44,8 +44,8 @@ const Comments = sequelize.define('comments', {
     primaryKey: true,
     autoIncrement: true
   },
-  userID: {
-    type: Sequelize.INTEGER
+  user: {
+    type: Sequelize.STRING
   },
   postID: {
     type: Sequelize.INTEGER
@@ -127,4 +127,13 @@ exports.getPosts = function (req, res) {
   Posts.findAll().then(posts => {
       res.render('home.ejs', { data: posts});
     });
+};
+
+exports.comment = function (req, res) {
+  var text = req.body.comment;
+  Comments.create({
+    user: req.session.username,
+    postID:
+    text: text
+  })
 };
