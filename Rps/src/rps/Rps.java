@@ -23,6 +23,7 @@ public class Rps {
       System.out.println("Enter your name: ");
       String playerName = reader.nextLine();
       
+      System.out.println("Welcome " + playerName + "!" + " Enter 1 for rock, 2 for paper, 3 for scissors.");
     }
     
 }
