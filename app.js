@@ -23,7 +23,12 @@ app.use(function(req, res, next) {
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/views/login.html'));
 app.get('/home', (req, res) => {
-  db.getPosts(req, res);
+  if (req.session.userid == null) {
+    res.sendFile(__dirname + '/views/login.html');
+  }
+  else {
+    db.getPosts(req, res);
+  }
 });
 app.get('/register', (req, res) => res.sendFile(__dirname + '/views/register.html'));
 app.get('/login', (req, res) => res.sendFile(__dirname + '/views/login.html'));
@@ -34,6 +39,11 @@ app.get('/post', (req, res) => {
   else {
     res.sendFile(__dirname + '/views/post.html');
   }
+});
+app.get('/logout', (req, res) => {
+  req.session.userid = null;
+  req.session.username = null;
+  res.redirect('/login');
 });
 
 app.post('/register', db.register);

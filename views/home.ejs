@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Acebook</title>
+  <title>WINstagram</title>
   <script>
   //var myVar = <%= data %>;
   //console.log(<%=data%>);
@@ -30,6 +30,10 @@
             <h4><%= data[i].dataValues.user %></h4><br>
             <img src="<%= data[i].dataValues.imageSrc %>" height="350" width="550"><br>
             <h4><%= data[i].dataValues.caption %></h4><br>
+            <form action="/comment" method="POST" class="form-horizontal">
+              <input type="text" name="comment" placeholder="Comment...">
+              <input type="submit" name="Submit" value="Post" class="btn"><br>
+            </form>
             <% } %>
         </div>
         </div>

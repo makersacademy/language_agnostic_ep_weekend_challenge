@@ -39,20 +39,20 @@ const Posts = sequelize.define('posts', {
 });
 
 const Comments = sequelize.define('comments', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  userID: {
-    type: Sequelize.INTEGER
-  },
-  postID: {
-    type: Sequelize.INTEGER
-  },
-  text: {
-    type: Sequelize.STRING
-  }
+ id: {
+  type: Sequelize.INTEGER,
+  primaryKey: true,
+  autoIncrement: true
+ },
+ user: {
+  type: Sequelize.STRING
+ },
+ postID: {
+  type: Sequelize.INTEGER
+ },
+ text: {
+  type: Sequelize.STRING
+ }
 });
 
 Users.sync();
