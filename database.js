@@ -69,3 +69,32 @@ exports.register = function(req, res) {
   });
   res.redirect('/login');
 };
+
+exports.login = function(req, res) {
+  var username = req.body.username;
+  var password = req.body.password;
+  Users.findOne({
+    where: {username: username}
+  }).then(users => {
+    if (users == null) {
+      //Represents if username not found
+      res.send({
+        "code":204,
+        "fail":"Usename address not found"
+      });
+    }
+    else if (password == users.password){
+      //Represents a sucessfull login
+      req.session.username = users.username;
+      console.log('User ' + req.session.username + ' logged in');
+      res.redirect('/home');
+    }
+    else {
+      //Represents matching username but incorrect password
+      res.send({
+        "code":204,
+        "fail":"Username and password does not match"
+      });
+    }
+  });
+};
