@@ -9,13 +9,20 @@ package rps;
  *
  * @author tutran
  */
+
+import java.util.Scanner;
+
 public class Rps {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+      Scanner reader = new Scanner(System.in);
+      
+      System.out.println("Enter your name: ");
+      String playerName = reader.nextLine();
+      
     }
     
 }
