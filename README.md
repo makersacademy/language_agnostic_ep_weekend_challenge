@@ -23,4 +23,19 @@ This weekend challenge is intended for use at the end, or in the middle of, engi
 
 #### 4. [Instagram](https://github.com/makersacademy/instagram-challenge)
 
+
+## User stories
+
+As a user
+So that I can use Instagram
+I should be able to sign up then sign in
+
+As a user
+So that I can share info with my friends
+I want to be able to post a status with an image
+
+As a user
+So that I can speak to my friends
+I should be able to leave a comment on their posts
+
 **In this project I worked with Rhydian(rhyds on GitHub) for some of the project**

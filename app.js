@@ -3,7 +3,7 @@ const app = express();
 const session  = require('express-session');
 const port = 8080;
 const bodyParser = require('body-parser');
-//const auth = require('./routes/sql');
+const db = require('./database.js');
 
 app.use(session({
   secret: 'password',
