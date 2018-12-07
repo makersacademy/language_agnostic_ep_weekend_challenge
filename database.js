@@ -27,8 +27,8 @@ const Posts = sequelize.define('posts', {
     primaryKey: true,
     autoIncrement: true
   },
-  userid: {
-    type: Sequelize.INTEGER
+  user: {
+    type: Sequelize.TEXT
   },
   caption: {
     type: Sequelize.STRING
@@ -63,11 +63,23 @@ exports.register = function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
 
-  Users.create({
-    username: username,
-    password: password
+  Users.findOne({
+    where: {username: username}
+  }).then(users => {
+    if (users == null) {
+      Users.create({
+        username: username,
+        password: password
+      });
+      res.redirect('/login');
+    }
+    else {
+      res.send({
+        "code":204,
+        "fail":"Usename already exists"
+      });
+    }
   });
-  res.redirect('/login');
 };
 
 exports.login = function(req, res) {
@@ -87,7 +99,7 @@ exports.login = function(req, res) {
       //Represents a sucessfull login
       req.session.username = users.username;
       req.session.userid = users.id;
-      console.log('User ' + req.session.username + ' logged in, UserID: ' + req.session.userid);
+      console.log('User ' + req.session.username + ' logged in, id:' + req.session.userid);
       res.redirect('/home');
     }
     else {
@@ -98,4 +110,21 @@ exports.login = function(req, res) {
       });
     }
   });
+};
+
+exports.post = function (req, res) {
+  var caption = req.body.post;
+  var imageUrl = req.body.source;
+  Posts.create({
+    user: req.session.username,
+    caption: caption,
+    imageSrc: imageUrl
+  });
+  res.redirect('/home');
+};
+
+exports.getPosts = function (req, res) {
+  Posts.findAll().then(posts => {
+      res.render('home.ejs', { data: posts});
+    });
 };
