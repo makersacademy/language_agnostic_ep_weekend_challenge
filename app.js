@@ -23,4 +23,6 @@ app.use(function(req, res, next) {
 
 app.get('/register', (req, res) => res.sendFile(__dirname + '/views/register.html'));
 
+app.post('/register', db.register);
+
 app.listen(port, () => console.log(`The app is running on port: ${port}! Make sure to open it in your browser!`));

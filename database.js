@@ -58,3 +58,14 @@ const Comments = sequelize.define('comments', {
 Users.sync();
 Posts.sync();
 Comments.sync();
+
+exports.register = function(req, res) {
+  var username = req.body.username;
+  var password = req.body.password;
+
+  Users.create({
+    username: username,
+    password: password
+  });
+  res.redirect('/login');
+};
