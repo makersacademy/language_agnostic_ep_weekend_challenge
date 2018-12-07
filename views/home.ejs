@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Acebook</title>
+  <script>
+  //var myVar = <%= data %>;
+  //console.log(<%=data%>);
+</script>
+<div>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/home">Home<span class="sr-only">(current)</span></a></li>
+      <li><a href="/post">Post</a></li>
+      <li><a href="/register">Register</a></li>
+      <li><a href="/login">Sign in</a></li>
+      <li style="float:right"><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+</div>
+</head>
+<body>
+  <div>
+    <div class="jumbotron">
+        <p>
+          <% for (var i=0; i < data.length; i++) { %>
+            <div id="postbox">
+            <h2><%= data[i].dataValues.user %></h2><br>
+            <img src="<%= data[i].dataValues.imageSrc %>" height="200" width="300"><br>
+            <h3><%= data[i].dataValues.caption %></h3><br>
+          </div>
+            <% } %>
+          </p>
+        </div>
+      </div>
+    </body>
+    </html>

@@ -27,8 +27,8 @@ const Posts = sequelize.define('posts', {
     primaryKey: true,
     autoIncrement: true
   },
-  userid: {
-    type: Sequelize.INTEGER
+  user: {
+    type: Sequelize.TEXT
   },
   caption: {
     type: Sequelize.STRING
@@ -116,9 +116,15 @@ exports.post = function (req, res) {
   var caption = req.body.post;
   var imageUrl = req.body.source;
   Posts.create({
-    userid: req.session.userid,
+    user: req.session.username,
     caption: caption,
     imageSrc: imageUrl
   });
   res.redirect('/home');
+};
+
+exports.getPosts = function (req, res) {
+  Posts.findAll().then(posts => {
+      res.render('home.ejs', { data: posts});
+    });
 };
