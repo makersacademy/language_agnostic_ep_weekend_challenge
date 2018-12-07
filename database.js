@@ -21,4 +21,22 @@ const Users = sequelize.define('users', {
   }
 });
 
+const Posts = sequelize.define('posts', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  userid: {
+    type: Sequelize.INTEGER
+  },
+  caption: {
+    type: Sequelize.STRING
+  },
+  imageSrc: {
+    type: Sequelize.STRING
+  }
+});
+
 Users.sync();
+Posts.sync();
