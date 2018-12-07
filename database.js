@@ -111,3 +111,14 @@ exports.login = function(req, res) {
     }
   });
 };
+
+exports.post = function (req, res) {
+  var caption = req.body.post;
+  var imageUrl = req.body.source;
+  Posts.create({
+    userid: req.session.userid,
+    caption: caption,
+    imageSrc: imageUrl
+  });
+  res.redirect('/home');
+};
