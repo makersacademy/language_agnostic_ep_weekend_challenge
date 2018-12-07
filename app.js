@@ -22,6 +22,8 @@ app.use(function(req, res, next) {
 
 app.get('/register', (req, res) => res.sendFile(__dirname + '/views/register.html'));
 app.get('/login', (req, res) => res.sendFile(__dirname + '/views/login.html'));
+app.get('/post', (req, res) => res.sendFile(__dirname + '/views/post.html'));
+
 
 app.post('/register', db.register);
 app.post('/login', db.login);

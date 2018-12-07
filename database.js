@@ -63,11 +63,23 @@ exports.register = function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
 
-  Users.create({
-    username: username,
-    password: password
+  Users.findOne({
+    where: {username: username}
+  }).then(users => {
+    if (users == null) {
+      Users.create({
+        username: username,
+        password: password
+      });
+      res.redirect('/login');
+    }
+    else {
+      res.send({
+        "code":204,
+        "fail":"Usename already exists"
+      });
+    }
   });
-  res.redirect('/login');
 };
 
 exports.login = function(req, res) {
@@ -86,7 +98,8 @@ exports.login = function(req, res) {
     else if (password == users.password){
       //Represents a sucessfull login
       req.session.username = users.username;
-      console.log('User ' + req.session.username + ' logged in');
+      req.session.userid = users.id;
+      console.log('User ' + req.session.username + ' logged in, id:' + req.session.userid);
       res.redirect('/home');
     }
     else {
