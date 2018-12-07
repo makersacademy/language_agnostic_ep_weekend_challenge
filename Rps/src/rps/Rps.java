@@ -11,6 +11,7 @@ package rps;
  */
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Rps {
 
@@ -19,11 +20,37 @@ public class Rps {
      */
     public static void main(String[] args) {
       Scanner reader = new Scanner(System.in);
+      Random random = new Random();
+      int computerScore = 0;
+      int playerScore = 0;
+      int counter = 0;
       
       System.out.println("Enter your name: ");
       String playerName = reader.nextLine();
       
-      System.out.println("Welcome " + playerName + "!" + " Enter 1 for rock, 2 for paper, 3 for scissors.");
+      while(counter == 0) {
+        int computerChoice = 1 + random.nextInt (3);
+        
+        System.out.println("Welcome " + playerName + "!" + " Enter 1 for rock, 2 for paper, 3 for scissors.");
+        int playerChoice = reader.nextInt();
+        
+        if (playerChoice == computerChoice) {
+            System.out.println("It is a tie!");
+        } else if (playerChoice == 1) {
+            if (computerChoice == 2) {
+                System.out.println("Computer selected paper.");
+                System.out.println("Sorry " + playerName + ", you lost this round.");
+                computerScore++;
+                System.out.println("Computer: " + computerScore);
+                System.out.println(playerName + ": " + playerScore);
+            }
+            
+        } else if (playerChoice == 2) {
+            
+        } else if (playerChoice == 3) {
+            
+        }
+      }
     }
     
 }
