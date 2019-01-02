@@ -48,6 +48,6 @@ app.get('/logout', (req, res) => {
 app.post('/register', db.register);
 app.post('/login', db.login);
 app.post('/post', db.post);
-app.post('/comment', db.comment);
+// app.post('/comment', db.comment);
 
 app.listen(port, () => console.log(`The app is running on port: ${port}! Make sure to open it in your browser!`));

@@ -1,5 +1,16 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mysql://root:password@127.0.0.1:3306/instagram');
+// const sequelize = new Sequelize('mysql://root:password@127.0.0.1:3306/instagram');
+const sequelize = new Sequelize('insta', 'test', 'password', {
+  host: 'localhost',
+  dialect: 'postgres',
+  operatorsAliases: false,
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  },
+});
 
 sequelize.authenticate().then(() => {
   console.log('Connection established');
@@ -124,16 +135,17 @@ exports.post = function (req, res) {
 };
 
 exports.getPosts = function (req, res) {
-  Posts.findAll().then(posts => {
-      res.render('home.ejs', { data: posts});
+  var current_user = req.session.username;
+  Posts.findAll({order: [['updatedAt', 'DESC']]}).then(posts => {
+      res.render('home.ejs', { data: posts, current_user});
     });
 };
 
-exports.comment = function (req, res) {
-  var text = req.body.comment;
-  Comments.create({
-    user: req.session.username,
-    postID:
-    text: text
-  })
-};
+// exports.comment = function (req, res) {
+//   var text = req.body.comment;
+//   Comments.create({
+//     user: req.session.username,
+//     postID:
+//     text: text
+//   })
+// };
