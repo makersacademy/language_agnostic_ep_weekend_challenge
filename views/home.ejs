@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WINstagram</title>
+  <script>
+  //var myVar = <%= data %>;
+  //console.log(<%=data%>);
+</script>
+<div>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/home">Home<span class="sr-only">(current)</span></a></li>
+      <li><a href="/post">Post</a></li>
+      <li><a href="/register">Register</a></li>
+      <li><a href="/login">Sign in</a></li>
+      <li style="float:right"><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+</div>
+</head>
+<body>
+  Current user: <%= current_user %>
+  <div>
+    <div class="jumbotron">
+      <p>
+        <% for (var i=0; i < data.length; i++) { %>
+          <div id="postbox">
+            <h4><%= data[i].dataValues.user %></h4><br>
+            <img src="<%= data[i].dataValues.imageSrc %>" height="350" width="500"><br>
+            <h4><%= data[i].dataValues.caption %></h4><br>
+            <form action="/comment" method="POST" class="form-horizontal">
+              <input type="text" name="comment" placeholder="Comment...">
+              <input type="submit" name="Submit" value="Post" class="btn"><br>
+            </form>
+          </div><br>
+          <% } %>
+        </p>
+      </div>
+    </div>
+  </body>
+  </html>

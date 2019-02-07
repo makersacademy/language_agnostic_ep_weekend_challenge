@@ -1,0 +1,20 @@
+#postbox {
+  width: 550px;
+  border-style: solid;
+  margin: auto;
+  text-align: center;
+}
+.postbox {
+  width: 550px;
+  border-style: solid;
+  margin: auto;
+  text-align: center;
+}
+#box {
+  margin: auto;
+  text-align: center;
+}
+.box {
+  margin: auto;
+  text-align: center;
+}

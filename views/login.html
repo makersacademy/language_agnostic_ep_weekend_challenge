@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WINstagram</title>
+  <div>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+      <ul class="nav navbar-nav">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/post">Post</a></li>
+        <li><a href="/register">Register</a></li>
+        <li class="active"><a href="/login">Sign in</a></li>
+        <li style="float:right"><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</head>
+<body>
+  <div>
+    <div class="jumbotron"> <p>
+            <div id="box">
+      <h3>Sign in</h3>
+      <form action="/login" method="POST" class="form-horizontal"><br>
+        <input type="text" name="username" placeholder="Username"><br>
+        <input type="password" password="password_r" name="password" placeholder="Password"><br>
+        <input type="submit" name="Submit" value="Enter" class="btn"><br>
+      </form>
+      <a href="register">Don't have an account? Register</a>
+
+    </div>
+    </p>
+  </div>
+</body>
+</html>
