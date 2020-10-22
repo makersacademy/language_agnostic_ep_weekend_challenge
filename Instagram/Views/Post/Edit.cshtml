@@ -1,0 +1,9 @@
+﻿@{
+}
+
+@using (Html.BeginForm("Update", "Post", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" /><br />
+    <input type="submit" value="OK" />
+    <input type="hidden" name="id" value="@ViewBag.Post.id" />
+}

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Post\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="wwwroot\upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20181202160314_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181202160314_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20181202160731_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181202160731_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\InstagramContextModelSnapshot.cs" />
+  </ItemGroup>
+</Project>
