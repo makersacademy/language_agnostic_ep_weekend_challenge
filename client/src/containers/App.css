@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Aldrich|Cabin+Sketch|Julius+Sans+One|Special+Elite|Ubuntu+Mono|Black+Han+Sans');
+
+h1 {
+font-family: 'Cabin Sketch', cursive;
+}
+
+h2 {
+font-family: 'Special Elite', cursive;
+}
+.App {
+  text-align: center;
+}
+
+div {
+  font-family: 'Aldrich', sans-serif
+}
+
+.date {
+  font-size:10px
+}
+
+
+
+  .newButton {
+    font-family: 'Cabin Sketch', cursive;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+      color: black;
+      border: 2px solid #e7e7e7;
+      border-radius:5%
+  }
+
+  .newButton:hover {background-color: #e7e7e7;}
+
+
+
+  .loginButton {
+    font-family: 'Cabin Sketch', cursive;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+      color: black;
+      border: 2px solid #e7e7e7;
+      border-radius:5%
+  }
+
+  .loginButton:hover {background-color: #e7e7e7;}
+
+  .headerButtons{
+    font-family: 'Cabin Sketch', cursive;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+      color: black;
+      border: 2px solid #e7e7e7;
+      border-radius:5%
+  }
+
+  .headerButtons:hover {background-color: #e7e7e7;}
+/* .fonts {
+  font-family: 'Aldrich', sans-serif;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Ubuntu Mono', monospace;
+} */
+/* .App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+} */
+
+.App-header {
+  background-color: #822b2b;
+  /* min-height: 100vh; */
+  height:200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* .App-link {
+  color: #61dafb;
+} */
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  text-align: center;
+  margin:auto;
+}
+.centered {
+  text-alight:center;
+}
+.gallery_item {
+  width: 30%;
+  height: 250px;
+  border: 1px solid black;
+}
+.gallery_image {
+  width: 100%;
+  height: 100%;
+   cursor: pointer;
+}
+
+div.gallery_item {
+    border: 1px solid #ccc;
+}
+
+div.gallery_item:hover {
+    border: 1px solid #777;
+}
+
+div.gallery_item img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
