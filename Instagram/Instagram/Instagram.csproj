@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\About.cshtml" />
+    <Content Remove="Views\Home\Contact.cshtml" />
+    <Content Remove="wwwroot\images\daschund.jpg" />
+    <Content Remove="wwwroot\images\golden-retriever.jpg" />
+    <Content Remove="wwwroot\images\dachshund.jpg" />
+    <Content Remove="wwwroot\images\TEST" />
+    <Content Remove="wwwroot\images\fghj" />
+    <Content Remove="wwwroot\images\sdafgew" />
+    <Content Remove="wwwroot\images\testing" />
+    <Content Remove="wwwroot\images\another attempt" />
+    <Content Remove="wwwroot\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="images\.DS_Store" />
+    <None Remove="images\kj" />
+    <None Remove="images\lk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\golden-retriever.jpg" />
+    <None Include="wwwroot\images\dachshund.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\User\" />
+  </ItemGroup>
+</Project>

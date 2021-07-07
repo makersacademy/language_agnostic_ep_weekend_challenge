@@ -1,0 +1,12 @@
+﻿@page
+@{
+}
+<h1>Add a post</h1>
+<form method="post" enctype="multipart/form-data" asp-action="Create">
+    <input id="file" type="file" name="file" accept="image/*" onchange="readURL(this);" />
+    <input type="text" name="caption" placeholder="caption" required="" />
+    <br>
+    <input type="submit" value="Upload" />
+</form>
+
+<img id="preview" class="preview" src="#"/>

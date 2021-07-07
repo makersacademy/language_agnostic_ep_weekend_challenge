@@ -1,0 +1,90 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.navbar-link {
+    font-size: 25px;
+    color: grey;
+}
+
+.navigation {
+    padding-top: 5px;
+}
+
+.navbar-link:hover {
+    color: black;
+}
+
+.preview {
+    height: 400px;
+}
+
+.post {
+    margin: 0 auto;
+    width: 602px;
+    border: solid grey 1px;
+    background-color: white;
+}
+
+.postimage {
+    max-height: 600px;
+    max-width: 600px;
+}
+
+.username {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.caption {
+    font-size: 15px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+.caption-username {
+    font-weight: bold;
+}
+
+.timestamp {
+    color: grey;
+    font-size: 12px;
+}

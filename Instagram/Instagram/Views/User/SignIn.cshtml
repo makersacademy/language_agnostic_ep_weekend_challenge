@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Sign In";
+}
+<h1>Sign In</h1>
+<form action="SignIn" method="post">
+    <input type="text" name="username" required="" autofocus="" placeholder="username" />
+    <input type="password" name="password" required="" placeholder="password" />
+    <input type="submit" />
+</form>
+<br />
+@ViewBag.Message
